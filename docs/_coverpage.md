@@ -14,7 +14,7 @@
 - https://clwen.top/
   
 
-[![stars](https://badgen.net/github/stars/seelly/seelly.github.io?icon=github&color=4ab8a1)](https://github.com/seelly/seelly.github.io) [![forks](https://badgen.net/github/forks/seelly/seelly.github.io?icon=github&color=4ab8a1)](https://github.com/seelly/seelly.github.io) 
+[![stars](https://img.shields.io/github/stars/Seelly/geektime-books?style=social)](https://github.com/seelly/seelly.github.io) [![forks](https://img.shields.io/github/forks/seelly/geektime-books?style=social)](https://github.com/seelly/seelly.github.io) 
 
 [GitHub](<https://github.com/seelly/seelly.github.io>)
 [开始阅读](README.md)
