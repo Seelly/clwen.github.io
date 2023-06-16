@@ -1,194 +1,185 @@
 - [:octocat: 首页](/README)
-
 - :memo: 目录
+   - 左耳听风
+      - [开篇词-洞悉技术的本质，享受科技的乐趣](/md/zuoertingfeng/开篇词-洞悉技术的本质，享受科技的乐趣.md)
+      - [01-程序员如何用技术变现（上）](/md/zuoertingfeng/01-程序员如何用技术变现（上）.md)
+      - [02-程序员如何用技术变现（下）](/md/zuoertingfeng/02-程序员如何用技术变现（下）.md)
+      - [03-Equifax信息泄露始末](/md/zuoertingfeng/03-Equifax信息泄露始末.md)
+      - [04-从Equifax信息泄露看数据安全](/md/zuoertingfeng/04-从Equifax信息泄露看数据安全.md)
+      - [05-何为技术领导力？](/md/zuoertingfeng/05-何为技术领导力？.md)
+      - [06-如何才能拥有技术领导力？](/md/zuoertingfeng/06-如何才能拥有技术领导力？.md)
+      - [07-推荐阅读：每个程序员都该知道的知识](/md/zuoertingfeng/07-推荐阅读：每个程序员都该知道的知识.md)
+      - [08-Go语言，Docker和新技术](/md/zuoertingfeng/08-Go语言，Docker和新技术.md)
+      - [09-答疑解惑：渴望、热情和选择](/md/zuoertingfeng/09-答疑解惑：渴望、热情和选择.md)
+      - [10-如何成为一个大家愿意追随的Leader？](/md/zuoertingfeng/10-如何成为一个大家愿意追随的Leader？.md)
+      - [11-程序中的错误处理：错误返回码和异常捕捉](/md/zuoertingfeng/11-程序中的错误处理：错误返回码和异常捕捉.md)
+      - [12-程序中的错误处理：异步编程以及我的最佳实践](/md/zuoertingfeng/12-程序中的错误处理：异步编程以及我的最佳实践.md)
+      - [13-魔数0x5f3759df](/md/zuoertingfeng/13-魔数0x5f3759df.md)
+      - [14-推荐阅读：机器学习101](/md/zuoertingfeng/14-推荐阅读：机器学习101.md)
+      - [15-时间管理：同扭曲时间的事儿抗争](/md/zuoertingfeng/15-时间管理：同扭曲时间的事儿抗争.md)
+      - [16-时间管理：如何利用好自己的时间？](/md/zuoertingfeng/16-时间管理：如何利用好自己的时间？.md)
+      - [17-故障处理最佳实践：应对故障](/md/zuoertingfeng/17-故障处理最佳实践：应对故障.md)
+      - [18-故障处理最佳实践：故障改进](/md/zuoertingfeng/18-故障处理最佳实践：故障改进.md)
+      - [19-答疑解惑：我们应该能够识别的表象和本质](/md/zuoertingfeng/19-答疑解惑：我们应该能够识别的表象和本质.md)
+      - [20-Git协同工作流，你该怎么选？](/md/zuoertingfeng/20-Git协同工作流，你该怎么选？.md)
+      - [21-分布式系统架构的冰与火](/md/zuoertingfeng/21-分布式系统架构的冰与火.md)
+      - [22-从亚马逊的实践，谈分布式系统的难点](/md/zuoertingfeng/22-从亚马逊的实践，谈分布式系统的难点.md)
+      - [23-分布式系统的技术栈](/md/zuoertingfeng/23-分布式系统的技术栈.md)
+      - [24-分布式系统关键技术：全栈监控](/md/zuoertingfeng/24-分布式系统关键技术：全栈监控.md)
+      - [25-分布式系统关键技术：服务调度](/md/zuoertingfeng/25-分布式系统关键技术：服务调度.md)
+      - [26-分布式系统关键技术：流量与数据调度](/md/zuoertingfeng/26-分布式系统关键技术：流量与数据调度.md)
+      - [27-洞悉PaaS平台的本质](/md/zuoertingfeng/27-洞悉PaaS平台的本质.md)
+      - [28-推荐阅读：分布式系统架构经典资料](/md/zuoertingfeng/28-推荐阅读：分布式系统架构经典资料.md)
+      - [29-推荐阅读：分布式数据调度相关论文](/md/zuoertingfeng/29-推荐阅读：分布式数据调度相关论文.md)
+      - [30-编程范式游记（1）-起源](/md/zuoertingfeng/30-编程范式游记（1）-起源.md)
+      - [31-编程范式游记（2）-泛型编程](/md/zuoertingfeng/31-编程范式游记（2）-泛型编程.md)
+      - [32-编程范式游记（3）-类型系统和泛型的本质](/md/zuoertingfeng/32-编程范式游记（3）-类型系统和泛型的本质.md)
+      - [33-编程范式游记（4）-函数式编程](/md/zuoertingfeng/33-编程范式游记（4）-函数式编程.md)
+      - [34-编程范式游记（5）-修饰器模式](/md/zuoertingfeng/34-编程范式游记（5）-修饰器模式.md)
+      - [35-编程范式游记（6）-面向对象编程](/md/zuoertingfeng/35-编程范式游记（6）-面向对象编程.md)
+      - [36-编程范式游记（7）-基于原型的编程范式](/md/zuoertingfeng/36-编程范式游记（7）-基于原型的编程范式.md)
+      - [37-编程范式游记（8）-Go语言的委托模式](/md/zuoertingfeng/37-编程范式游记（8）-Go语言的委托模式.md)
+      - [38-编程范式游记（9）-编程的本质](/md/zuoertingfeng/38-编程范式游记（9）-编程的本质.md)
+      - [39-编程范式游记（10）-逻辑编程范式](/md/zuoertingfeng/39-编程范式游记（10）-逻辑编程范式.md)
+      - [40-编程范式游记（11）-程序世界里的编程范式](/md/zuoertingfeng/40-编程范式游记（11）-程序世界里的编程范式.md)
+      - [41-弹力设计篇之“认识故障和弹力设计”](/md/zuoertingfeng/41-弹力设计篇之“认识故障和弹力设计”.md)
+      - [42-弹力设计篇之“隔离设计”](/md/zuoertingfeng/42-弹力设计篇之“隔离设计”.md)
+      - [43-弹力设计篇之“异步通讯设计”](/md/zuoertingfeng/43-弹力设计篇之“异步通讯设计”.md)
+      - [44-弹力设计篇之“幂等性设计”](/md/zuoertingfeng/44-弹力设计篇之“幂等性设计”.md)
+      - [45-弹力设计篇之“服务的状态”](/md/zuoertingfeng/45-弹力设计篇之“服务的状态”.md)
+      - [46-弹力设计篇之“补偿事务”](/md/zuoertingfeng/46-弹力设计篇之“补偿事务”.md)
+      - [47-弹力设计篇之“重试设计”](/md/zuoertingfeng/47-弹力设计篇之“重试设计”.md)
+      - [48-弹力设计篇之“熔断设计”](/md/zuoertingfeng/48-弹力设计篇之“熔断设计”.md)
+      - [49-弹力设计篇之“限流设计”](/md/zuoertingfeng/49-弹力设计篇之“限流设计”.md)
+      - [50-弹力设计篇之“降级设计”](/md/zuoertingfeng/50-弹力设计篇之“降级设计”.md)
+      - [51-弹力设计篇之“弹力设计总结”](/md/zuoertingfeng/51-弹力设计篇之“弹力设计总结”.md)
+      - [52-管理设计篇之“分布式锁”](/md/zuoertingfeng/52-管理设计篇之“分布式锁”.md)
+      - [53-管理设计篇之“配置中心”](/md/zuoertingfeng/53-管理设计篇之“配置中心”.md)
+      - [54-管理设计篇之“边车模式”](/md/zuoertingfeng/54-管理设计篇之“边车模式”.md)
+      - [55-管理设计篇之“服务网格”](/md/zuoertingfeng/55-管理设计篇之“服务网格”.md)
+      - [56-管理设计篇之“网关模式”](/md/zuoertingfeng/56-管理设计篇之“网关模式”.md)
+      - [57-管理设计篇之“部署升级策略”](/md/zuoertingfeng/57-管理设计篇之“部署升级策略”.md)
+      - [58-性能设计篇之“缓存”](/md/zuoertingfeng/58-性能设计篇之“缓存”.md)
+      - [59-性能设计篇之“异步处理”](/md/zuoertingfeng/59-性能设计篇之“异步处理”.md)
+      - [60-性能设计篇之“数据库扩展”](/md/zuoertingfeng/60-性能设计篇之“数据库扩展”.md)
+      - [61-性能设计篇之“秒杀”](/md/zuoertingfeng/61-性能设计篇之“秒杀”.md)
+      - [62-性能设计篇之“边缘计算”](/md/zuoertingfeng/62-性能设计篇之“边缘计算”.md)
+      - [63-区块链技术的本质](/md/zuoertingfeng/63-区块链技术的本质.md)
+      - [64-区块链技术细节：哈希算法](/md/zuoertingfeng/64-区块链技术细节：哈希算法.md)
+      - [65-区块链技术细节：加密和挖矿](/md/zuoertingfeng/65-区块链技术细节：加密和挖矿.md)
+      - [66-区块链技术细节：去中心化的共识机制](/md/zuoertingfeng/66-区块链技术细节：去中心化的共识机制.md)
+      - [67-区块链技术细节：智能合约](/md/zuoertingfeng/67-区块链技术细节：智能合约.md)
+      - [68-区块链技术-传统金融和虚拟货币](/md/zuoertingfeng/68-区块链技术-传统金融和虚拟货币.md)
+      - [69-程序员练级攻略：开篇词](/md/zuoertingfeng/69-程序员练级攻略：开篇词.md)
+      - [70-程序员练级攻略：零基础启蒙](/md/zuoertingfeng/70-程序员练级攻略：零基础启蒙.md)
+      - [71-程序员练级攻略：正式入门](/md/zuoertingfeng/71-程序员练级攻略：正式入门.md)
+      - [72-程序员练级攻略：程序员修养](/md/zuoertingfeng/72-程序员练级攻略：程序员修养.md)
+      - [73-程序员练级攻略：编程语言](/md/zuoertingfeng/73-程序员练级攻略：编程语言.md)
+      - [74-程序员练级攻略：理论学科](/md/zuoertingfeng/74-程序员练级攻略：理论学科.md)
+      - [75-程序员练级攻略：系统知识](/md/zuoertingfeng/75-程序员练级攻略：系统知识.md)
+      - [76-程序员练级攻略：软件设计](/md/zuoertingfeng/76-程序员练级攻略：软件设计.md)
+      - [77-程序员练级攻略：Linux系统、内存和网络](/md/zuoertingfeng/77-程序员练级攻略：Linux系统、内存和网络.md)
+      - [78-程序员练级攻略：异步I-O模型和Lock-Free编程](/md/zuoertingfeng/78-程序员练级攻略：异步I-O模型和Lock-Free编程.md)
+      - [79-程序员练级攻略：Java底层知识](/md/zuoertingfeng/79-程序员练级攻略：Java底层知识.md)
+      - [80-程序员练级攻略：数据库](/md/zuoertingfeng/80-程序员练级攻略：数据库.md)
+      - [81-程序员练级攻略：分布式架构入门](/md/zuoertingfeng/81-程序员练级攻略：分布式架构入门.md)
+      - [82-程序员练级攻略：分布式架构经典图书和论文](/md/zuoertingfeng/82-程序员练级攻略：分布式架构经典图书和论文.md)
+      - [83-程序员练级攻略：分布式架构工程设计](/md/zuoertingfeng/83-程序员练级攻略：分布式架构工程设计.md)
+      - [84-程序员练级攻略：微服务](/md/zuoertingfeng/84-程序员练级攻略：微服务.md)
+      - [85-程序员练级攻略：容器化和自动化运维](/md/zuoertingfeng/85-程序员练级攻略：容器化和自动化运维.md)
+      - [86-程序员练级攻略：机器学习和人工智能](/md/zuoertingfeng/86-程序员练级攻略：机器学习和人工智能.md)
+      - [87-程序员练级攻略：前端基础和底层原理](/md/zuoertingfeng/87-程序员练级攻略：前端基础和底层原理.md)
+      - [88-程序员练级攻略：前端性能优化和框架](/md/zuoertingfeng/88-程序员练级攻略：前端性能优化和框架.md)
+      - [89-程序员练级攻略：UI-UX设计](/md/zuoertingfeng/89-程序员练级攻略：UI-UX设计.md)
+      - [90-程序员练级攻略：技术资源集散地](/md/zuoertingfeng/90-程序员练级攻略：技术资源集散地.md)
+      - [91-程序员练级攻略的正确打开方式](/md/zuoertingfeng/91-程序员练级攻略的正确打开方式.md)
+      - [92-程序员面试攻略：面试前的准备](/md/zuoertingfeng/92-程序员面试攻略：面试前的准备.md)
+      - [93-程序员面试攻略：面试中的技巧](/md/zuoertingfeng/93-程序员面试攻略：面试中的技巧.md)
+      - [94-程序员面试攻略：面试风格](/md/zuoertingfeng/94-程序员面试攻略：面试风格.md)
+      - [95-程序员面试攻略：实力才是王中王](/md/zuoertingfeng/95-程序员面试攻略：实力才是王中王.md)
+      - [96-高效学习：端正学习态度](/md/zuoertingfeng/96-高效学习：端正学习态度.md)
+      - [97-高效学习：源头、原理和知识地图](/md/zuoertingfeng/97-高效学习：源头、原理和知识地图.md)
+      - [98-高效学习：深度，归纳和坚持实践](/md/zuoertingfeng/98-高效学习：深度，归纳和坚持实践.md)
+      - [99-高效学习：如何学习和阅读代码](/md/zuoertingfeng/99-高效学习：如何学习和阅读代码.md)
+      - [100-高效学习：面对枯燥和量大的知识](/md/zuoertingfeng/100-高效学习：面对枯燥和量大的知识.md)
+      - [101-高效沟通：Talk和Code同等重要](/md/zuoertingfeng/101-高效沟通：Talk和Code同等重要.md)
+      - [102-高效沟通：沟通阻碍和应对方法](/md/zuoertingfeng/102-高效沟通：沟通阻碍和应对方法.md)
+      - [103-高效沟通：沟通方式及技巧](/md/zuoertingfeng/103-高效沟通：沟通方式及技巧.md)
+      - [104-高效沟通：沟通技术](/md/zuoertingfeng/104-高效沟通：沟通技术.md)
+      - [105-高效沟通：好老板要善于提问](/md/zuoertingfeng/105-高效沟通：好老板要善于提问.md)
+      - [106-高效沟通：好好说话的艺术](/md/zuoertingfeng/106-高效沟通：好好说话的艺术.md)
+      - [107-Go编程模式：切片、接口、时间和性能](/md/zuoertingfeng/107-Go编程模式：切片、接口、时间和性能.md)
+      - [108-Go编程模式：错误处理](/md/zuoertingfeng/108-Go编程模式：错误处理.md)
+      - [109-Go编程模式：FunctionalOptions](/md/zuoertingfeng/109-Go编程模式：FunctionalOptions.md)
+      - [110-Go编程模式：委托和反转控制](/md/zuoertingfeng/110-Go编程模式：委托和反转控制.md)
+      - [111-Go编程模式：Map-Reduce](/md/zuoertingfeng/111-Go编程模式：Map-Reduce.md)
+      - [112-Go编程模式：GoGeneration](/md/zuoertingfeng/112-Go编程模式：GoGeneration.md)
+      - [113-Go编程模式：修饰器](/md/zuoertingfeng/113-Go编程模式：修饰器.md)
+      - [114-Go编程模式：Pipeline](/md/zuoertingfeng/114-Go编程模式：Pipeline.md)
+      - [115-Go编程模式：KubernetesVisitor模式](/md/zuoertingfeng/115-Go编程模式：KubernetesVisitor模式.md)
+      - [加餐-谈谈我的“三观”](/md/zuoertingfeng/加餐-谈谈我的“三观”.md)
+      - [结束语-业精于勤，行成于思](/md/zuoertingfeng/结束语-业精于勤，行成于思.md)
+      - [课程迭代｜全新交付117讲音频](/md/zuoertingfeng/课程迭代｜全新交付117讲音频.md)
+   
+   - Go语言核心36讲
+      - [导读-写给0基础入门的Go语言学习者](/md/golang36/导读-写给0基础入门的Go语言学习者.md)
+      - [导读-学习专栏的正确姿势](/md/golang36/导读-学习专栏的正确姿势.md)
+      - [开篇词-跟着学，你也能成为Go语言高手](/md/golang36/开篇词-跟着学，你也能成为Go语言高手.md)
+      - [01-工作区和GOPATH](/md/golang36/01-工作区和GOPATH.md)
+      - [02-命令源码文件](/md/golang36/02-命令源码文件.md)
+      - [03-库源码文件](/md/golang36/03-库源码文件.md)
+      - [04-程序实体的那些事儿（上）](/md/golang36/04-程序实体的那些事儿（上）.md)
+      - [05-程序实体的那些事儿（中）](/md/golang36/05-程序实体的那些事儿（中）.md)
+      - [06-程序实体的那些事儿（下）](/md/golang36/06-程序实体的那些事儿（下）.md)
+      - [07-数组和切片](/md/golang36/07-数组和切片.md)
+      - [08-container包中的那些容器](/md/golang36/08-container包中的那些容器.md)
+      - [09-字典的操作和约束](/md/golang36/09-字典的操作和约束.md)
+      - [10-通道的基本操作](/md/golang36/10-通道的基本操作.md)
+      - [11-通道的高级玩法](/md/golang36/11-通道的高级玩法.md)
+      - [12-使用函数的正确姿势](/md/golang36/12-使用函数的正确姿势.md)
+      - [13-结构体及其方法的使用法门](/md/golang36/13-结构体及其方法的使用法门.md)
+      - [14-接口类型的合理运用](/md/golang36/14-接口类型的合理运用.md)
+      - [15-关于指针的有限操作](/md/golang36/15-关于指针的有限操作.md)
+      - [16-go语句及其执行规则（上）](/md/golang36/16-go语句及其执行规则（上）.md)
+      - [17-go语句及其执行规则（下）](/md/golang36/17-go语句及其执行规则（下）.md)
+      - [18-if语句、for语句和switch语句](/md/golang36/18-if语句、for语句和switch语句.md)
+      - [19-错误处理（上）](/md/golang36/19-错误处理（上）.md)
+      - [20-错误处理（下）](/md/golang36/20-错误处理（下）.md)
+      - [21-panic函数、recover函数以及defer语句（上）](/md/golang36/21-panic函数、recover函数以及defer语句（上）.md)
+      - [22-panic函数、recover函数以及defer语句（下）](/md/golang36/22-panic函数、recover函数以及defer语句（下）.md)
+      - [23-测试的基本规则和流程（上）](/md/golang36/23-测试的基本规则和流程（上）.md)
+      - [24-测试的基本规则和流程（下）](/md/golang36/24-测试的基本规则和流程（下）.md)
+      - [25-更多的测试手法](/md/golang36/25-更多的测试手法.md)
+      - [26-sync.Mutex与sync.RWMutex](/md/golang36/26-sync.Mutex与sync.RWMutex.md)
+      - [27-条件变量sync.Cond（上）](/md/golang36/27-条件变量sync.Cond（上）.md)
+      - [28-条件变量sync.Cond（下）](/md/golang36/28-条件变量sync.Cond（下）.md)
+      - [29-原子操作（上）](/md/golang36/29-原子操作（上）.md)
+      - [30-原子操作（下）](/md/golang36/30-原子操作（下）.md)
+      - [31-sync.WaitGroup和sync.Once](/md/golang36/31-sync.WaitGroup和sync.Once.md)
+      - [32-context.Context类型](/md/golang36/32-context.Context类型.md)
+      - [33-临时对象池sync.Pool](/md/golang36/33-临时对象池sync.Pool.md)
+      - [34-并发安全字典sync.Map（上）](/md/golang36/34-并发安全字典sync.Map（上）.md)
+      - [35-并发安全字典sync.Map(下)](/md/golang36/35-并发安全字典sync.Map(下).md)
+      - [36-unicode与字符编码](/md/golang36/36-unicode与字符编码.md)
+      - [37-strings包与字符串操作](/md/golang36/37-strings包与字符串操作.md)
+      - [38-bytes包与字节串操作（上）](/md/golang36/38-bytes包与字节串操作（上）.md)
+      - [39-bytes包与字节串操作（下）](/md/golang36/39-bytes包与字节串操作（下）.md)
+      - [40-io包中的接口和工具（上）](/md/golang36/40-io包中的接口和工具（上）.md)
+      - [41-io包中的接口和工具（下）](/md/golang36/41-io包中的接口和工具（下）.md)
+      - [42-bufio包中的数据类型（上）](/md/golang36/42-bufio包中的数据类型（上）.md)
+      - [43-bufio包中的数据类型（下）](/md/golang36/43-bufio包中的数据类型（下）.md)
+      - [44-使用os包中的API（上）](/md/golang36/44-使用os包中的API（上）.md)
+      - [45-使用os包中的API（下）](/md/golang36/45-使用os包中的API（下）.md)
+      - [46-访问网络服务](/md/golang36/46-访问网络服务.md)
+      - [47-基于HTTP协议的网络服务](/md/golang36/47-基于HTTP协议的网络服务.md)
+      - [48-程序性能分析基础（上）](/md/golang36/48-程序性能分析基础（上）.md)
+      - [49-程序性能分析基础（下）](/md/golang36/49-程序性能分析基础（下）.md)
+      - [尾声-愿你披荆斩棘，所向无敌](/md/golang36/尾声-愿你披荆斩棘，所向无敌.md)
+      - [新年彩蛋-完整版思考题答案](/md/golang36/新年彩蛋-完整版思考题答案.md)
+      - [结课测试-这些Go语言的知识你都掌握了吗？](/md/golang36/结课测试-这些Go语言的知识你都掌握了吗？.md)
+   
+   - 数据库
+      - [MySQL学习记录](/md/MySQL学习记录.md)
+      - [Index](/md/Index.md)
+   
 
-   - <details>   <summary>左耳听风</summary> 
-          <ul>
-          <li><a href='/#/md/zuoertingfeng/01-程序员如何用技术变现（上）.md'>01-程序员如何用技术变现（上）</a></li>
-          <li><a href='/#/md/zuoertingfeng/02-程序员如何用技术变现（下）.md'>02-程序员如何用技术变现（下）</a></li>
-          <li><a href='/#/md/zuoertingfeng/03-Equifax信息泄露始末.md'>03-Equifax信息泄露始末</a></li>
-          <li><a href='/#/md/zuoertingfeng/04-从Equifax信息泄露看数据安全.md'>04-从Equifax信息泄露看数据安全</a></li>
-          <li><a href='/#/md/zuoertingfeng/05-何为技术领导力？.md'>05-何为技术领导力？</a></li>
-          <li><a href='/#/md/zuoertingfeng/06-如何才能拥有技术领导力？.md'>06-如何才能拥有技术领导力？</a></li>
-          <li><a href='/#/md/zuoertingfeng/07-推荐阅读：每个程序员都该知道的知识.md'>07-推荐阅读：每个程序员都该知道的知识</a></li>
-          <li><a href='/#/md/zuoertingfeng/08-Go语言，Docker和新技术.md'>08-Go语言，Docker和新技术</a></li>
-          <li><a href='/#/md/zuoertingfeng/09-答疑解惑：渴望、热情和选择.md'>09-答疑解惑：渴望、热情和选择</a></li>
-          <li><a href='/#/md/zuoertingfeng/10-如 何成为一个大家愿意追随的Leader？.md'>10-如何成为一个大家愿意追随的Leader？</a></li>
-          <li><a href='/#/md/zuoertingfeng/100-高效学习：面对枯燥和量大的知识.md'>100-高效学习：面对枯燥和量大的知识</a></li>
-          <li><a href='/#/md/zuoertingfeng/101-高效沟通 ：Talk和Code同等重要.md'>101-高效沟通：Talk和Code同等重要</a></li>
-          <li><a href='/#/md/zuoertingfeng/102-高效沟通：沟通阻碍 和应对方法.md'>102-高效沟通：沟通阻碍和应对方法</a></li>
-          <li><a href='/#/md/zuoertingfeng/103-高效沟通：沟通方式及技巧.md'>103-高效沟通：沟通方式及技巧</a></li>
-          <li><a href='/#/md/zuoertingfeng/104-高效沟通：沟通技术.md'>104-高效沟通：沟通技术</a></li>
-          <li><a href='/#/md/zuoertingfeng/105-高效沟通：好老板要善于提问.md'>105-高效沟通：好老板要善于提问</a></li>
-          <li><a href='/#/md/zuoertingfeng/106-高效沟通：好好说话的艺术.md'>106-高效沟通：好好说话的艺术</a></li>
-          <li><a href='/#/md/zuoertingfeng/107-Go编程模式：切片、接口、时间和性能.md'>107-Go编程模式：切片、接口、时间和性能</a></li>
-          <li><a href='/#/md/zuoertingfeng/108-Go编程模式：错误处理.md'>108-Go编程模式：错误处理</a></li>
-          <li><a href='/#/md/zuoertingfeng/109-Go编程模式：FunctionalOptions.md'>109-Go编程模式：FunctionalOptions</a></li>
-          <li><a href='/#/md/zuoertingfeng/11-程序中的错误处理：错误返回码 和异常捕捉.md'>11-程序中的错误处理：错误返回码和异常捕捉</a></li>
-          <li><a href='/#/md/zuoertingfeng/110-Go编程模式：委托和反转控制.md'>110-Go编程模式：委托和反转控制</a></li>
-          <li><a href='/#/md/zuoertingfeng/111-Go编程模式：Map-Reduce.md'>111-Go编程模式：Map-Reduce</a></li>
-          <li><a href='/#/md/zuoertingfeng/112-Go编程模式：GoGeneration.md'>112-Go编程模式：GoGeneration</a></li>
-          <li><a href='/#/md/zuoertingfeng/113-Go编程模式：修饰器.md'>113-Go编程模式：修饰器</a></li>
-          <li><a href='/#/md/zuoertingfeng/114-Go编程模式：Pipeline.md'>114-Go编程模式：Pipeline</a></li>
-          <li><a href='/#/md/zuoertingfeng/115-Go编程模式：KubernetesVisitor模式.md'>115-Go编程模式：KubernetesVisitor模式</a></li>
-          <li><a href='/#/md/zuoertingfeng/12-程序中的错误处理 ：异步编程以及我的最佳实践.md'>12-程序中的错误处理：异步编程以及我的最佳实践</a></li>
-          <li><a href='/#/md/zuoertingfeng/13- 魔数0x5f3759df.md'>13-魔数0x5f3759df</a></li>
-          <li><a href='/#/md/zuoertingfeng/14-推荐阅读：机器学习101.md'>14-推荐阅读：机器学习101</a></li>
-          <li><a href='/#/md/zuoertingfeng/15-时间管理：同扭曲时间的事儿抗争.md'>15-时间管理：同扭曲时间的事儿抗争</a></li>
-          <li><a href='/#/md/zuoertingfeng/16-时间管理：如何利用好自己的时间？.md'>16-时间管理：如何利用好自己的时间？</a></li>
-          <li><a href='/#/md/zuoertingfeng/17-故障处理最佳实践：应对故障.md'>17-故障处理最佳实践：应对故障</a></li>
-          <li><a href='/#/md/zuoertingfeng/18-故障处理最佳实践：故障改进.md'>18-故障处理最佳实践：故障改进</a></li>
-          <li><a href='/#/md/zuoertingfeng/19-答疑解惑：我们应该能够识别的表象和本质.md'>19-答疑解惑：我们应该能够识别的表象和本质</a></li>
-          <li><a href='/#/md/zuoertingfeng/20-Git协同工作流，你该怎么选？.md'>20-Git协同工作流，你该怎么选？</a></li>
-          <li><a href='/#/md/zuoertingfeng/21-分布式系统架构的冰与火.md'>21-分布式系统架构的冰与火</a></li>
-          <li><a href='/#/md/zuoertingfeng/22-从亚马逊的实践，谈分布式系统 的难点.md'>22-从亚马逊的实践，谈分布式系统的难点</a></li>
-          <li><a href='/#/md/zuoertingfeng/23-分布式系统的技术栈.md'>23-分 布式系统的技术栈</a></li>
-          <li><a href='/#/md/zuoertingfeng/24-分布式系统关键技术：全栈监控.md'>24-分布式系统关键技术：全栈 监控</a></li>
-          <li><a href='/#/md/zuoertingfeng/25-分布式系统关键技术：服务调度.md'>25-分布式系统关键技术：服务调度</a></li>
-          <li><a href='/#/md/zuoertingfeng/26-分布式系统关键技术：流量与数据调度.md'>26-分布式系统关键技术：流量与数据调度</a></li>
-          <li><a href='/#/md/zuoertingfeng/27-洞悉PaaS平台的本质.md'>27-洞悉PaaS平台的本质</a></li>
-          <li><a href='/#/md/zuoertingfeng/28-推荐阅读：分布式系统架构经典资料.md'>28-推荐阅读：分布式系统架构经典资料</a></li>
-          <li><a href='/#/md/zuoertingfeng/29-推荐 阅读：分布式数据调度相关论文.md'>29-推荐阅读：分布式数据调度相关论文</a></li>
-          <li><a href='/#/md/zuoertingfeng/30-编程范式 游记（1）-起源.md'>30-编程范式游记（1）-起源</a></li>
-          <li><a href='/#/md/zuoertingfeng/31-编程范式游记（2）-泛型编程.md'>31-编程范式游记（2）-泛型编程</a></li>
-          <li><a href='/#/md/zuoertingfeng/32-编程范式游记（3）-类型系统和泛型的本质.md'>32-编程范式游记（3）-类型系统和泛型的本质</a></li>
-          <li><a href='/#/md/zuoertingfeng/33-编程范式游记（4）-函数式编程.md'>33-编程范 式游记（4）-函数式编程</a></li>
-          <li><a href='/#/md/zuoertingfeng/34-编程范式游记（5）-修饰器模式.md'>34-编程范式游记（5）- 修饰器模式</a></li>
-          <li><a href='/#/md/zuoertingfeng/35-编程范式游记（6）-面向对象编程.md'>35-编程范式游记（6）-面向对象编 程</a></li>
-          <li><a href='/#/md/zuoertingfeng/36-编程范式游记（7）-基于原型的编程范式.md'>36-编程范式游记（7）-基于原型的编 程范式</a></li>
-          <li><a href='/#/md/zuoertingfeng/37-编程范式游记（8）-Go语言的委托模式.md'>37-编程范式游记（8）-Go语言的委 托模式</a></li>
-          <li><a href='/#/md/zuoertingfeng/38-编程范式游记（9）-编程的本质.md'>38-编程范式游记（9）-编程的本质</a></li>
-          <li><a href='/#/md/zuoertingfeng/39-编程范式游记（10）-逻辑编程范式.md'>39-编程范式游记（10）-逻辑编程范式</a></li>
-          <li><a href='/#/md/zuoertingfeng/40-编程范式游记（11）-程序世界里的编程范式.md'>40-编程范式游记（11）-程序世界里的编程范式</a></li>
-          <li><a href='/#/md/zuoertingfeng/41-弹力设计篇之“认识故障和弹力设计”.md'>41-弹力设计篇之“认识故障和弹力设计”</a></li>
-          <li><a href='/#/md/zuoertingfeng/42-弹力设计篇之“隔离设计”.md'>42-弹力设计篇之“隔离设计”</a></li>
-          <li><a href='/#/md/zuoertingfeng/43-弹力设计篇之“异步通讯设计”.md'>43-弹力设计篇之“异步通讯设计”</a></li>
-          <li><a href='/#/md/zuoertingfeng/44-弹力设计篇之“幂等性设计”.md'>44-弹力设计篇之“幂等性设计”</a></li>
-          <li><a href='/#/md/zuoertingfeng/45-弹力设计篇之“服务的状态”.md'>45-弹力设计篇之“服务的状态”</a></li>
-          <li><a href='/#/md/zuoertingfeng/46-弹力设计篇之“补偿事务”.md'>46-弹力设计篇之“补偿事务”</a></li>
-          <li><a href='/#/md/zuoertingfeng/47-弹力设计篇之“重试设计”.md'>47-弹力设计篇之“重试设计”</a></li>
-          <li><a href='/#/md/zuoertingfeng/48-弹力设计篇之“熔断设计”.md'>48-弹力设计篇之“熔断设计”</a></li>
-          <li><a href='/#/md/zuoertingfeng/49-弹力设计篇之“限流设计”.md'>49-弹力设计篇之“限流设计”</a></li>
-          <li><a href='/#/md/zuoertingfeng/50-弹力设计篇之“降级设计”.md'>50-弹力设计篇之“降级设计”</a></li>
-          <li><a href='/#/md/zuoertingfeng/51-弹力设计篇之“弹力设计总结”.md'>51-弹力设计篇之“弹力设计总结”</a></li>
-          <li><a href='/#/md/zuoertingfeng/52-管理设计篇之“分布式锁”.md'>52-管理设计篇之“分布式锁”</a></li>
-          <li><a href='/#/md/zuoertingfeng/53-管理设计篇之“配置中心”.md'>53-管理设计篇之“配置中心”</a></li>
-          <li><a href='/#/md/zuoertingfeng/54-管理设计篇之“边车模式”.md'>54-管理设计篇之“边车模式”</a></li>
-          <li><a href='/#/md/zuoertingfeng/55-管理设计篇之“服务网格”.md'>55-管理设计篇之“服务网格”</a></li>
-          <li><a href='/#/md/zuoertingfeng/56-管理设计篇之“网关模式”.md'>56-管理设计篇之“网关模式”</a></li>
-          <li><a href='/#/md/zuoertingfeng/57-管理设计篇之“部署升级策略”.md'>57-管理设计篇之“部署升级策略”</a></li>
-          <li><a href='/#/md/zuoertingfeng/58-性能设计篇之“缓存”.md'>58-性能设计篇之“缓存”</a></li>
-          <li><a href='/#/md/zuoertingfeng/59-性能设计篇之“异步处理”.md'>59-性能设计篇之“异步处理”</a></li>
-          <li><a href='/#/md/zuoertingfeng/60-性能设计篇之“数据库扩展”.md'>60-性能设计篇之“数据库扩展”</a></li>
-          <li><a href='/#/md/zuoertingfeng/61-性能设计篇之“秒杀”.md'>61-性能设计篇之“秒杀”</a></li>
-          <li><a href='/#/md/zuoertingfeng/62-性 能设计篇之“边缘计算”.md'>62-性能设计篇之“边缘计算”</a></li>
-          <li><a href='/#/md/zuoertingfeng/63-区块链技术的本质.md'>63-区块链技术的本质</a></li>
-          <li><a href='/#/md/zuoertingfeng/64-区块链技术细节：哈希算法.md'>64-区块链技术细节：哈希算法</a></li>
-          <li><a href='/#/md/zuoertingfeng/65-区块链技术细节：加密和挖矿.md'>65-区块链技术细节：加密和挖矿</a></li>
-          <li><a href='/#/md/zuoertingfeng/66-区块链技术细节：去中心化的共识机制.md'>66-区块链技术细节：去中心化的共识机制</a></li>
-          <li><a href='/#/md/zuoertingfeng/67-区块链技术细节：智能合约.md'>67-区块链技术细节：智能合约</a></li>
-          <li><a href='/#/md/zuoertingfeng/68-区块链技术-传统金融和虚拟货币.md'>68-区块链技术-传统金融和虚拟货币</a></li>
-          <li><a href='/#/md/zuoertingfeng/69-程序员练级 攻略：开篇词.md'>69-程序员练级攻略：开篇词</a></li>
-          <li><a href='/#/md/zuoertingfeng/70-程序员练级攻略：零基础启蒙.md'>70- 程序员练级攻略：零基础启蒙</a></li>
-          <li><a href='/#/md/zuoertingfeng/71-程序员练级攻略：正式入门.md'>71-程序员练级攻略：正 式入门</a></li>
-          <li><a href='/#/md/zuoertingfeng/72-程序员练级攻略：程序员修养.md'>72-程序员练级攻略：程序员修养</a></li>
-          <li><a href='/#/md/zuoertingfeng/73-程序员练级攻略：编程语言.md'>73-程序员练级攻略：编程语言</a></li>
-          <li><a href='/#/md/zuoertingfeng/74-程序员练级攻略：理论学科.md'>74-程序员练级攻略：理论学科</a></li>
-          <li><a href='/#/md/zuoertingfeng/75-程序员练级攻略：系统知识.md'>75-程序员练级攻略：系统知识</a></li>
-          <li><a href='/#/md/zuoertingfeng/76-程序员练级攻略：软件设计.md'>76-程序员练级攻略：软件设计</a></li>
-          <li><a href='/#/md/zuoertingfeng/77-程序员练级攻略：Linux系统、内存和网络.md'>77-程序员 练级攻略：Linux系统、内存和网络</a></li>
-          <li><a href='/#/md/zuoertingfeng/78-程序员练级攻略：异步I-O模型和Lock-Free编程.md'>78-程序员练级攻略：异步I-O模型和Lock-Free编程</a></li>
-          <li><a href='/#/md/zuoertingfeng/79-程序员练级攻略：Java底层知识.md'>79-程序员练级攻略：Java底层知识</a></li>
-          <li><a href='/#/md/zuoertingfeng/80-程序员练级攻略：数据库.md'>80-程序员练级攻略：数据库</a></li>
-          <li><a href='/#/md/zuoertingfeng/81-程序员练级攻略：分布式架构入门.md'>81-程序员练级攻略：分布式架构入门</a></li>
-          <li><a href='/#/md/zuoertingfeng/82-程序员练级攻略：分布式架构经典图书和论文.md'>82-程序员练级攻略：分布式架构经典图书和论文</a></li>
-          <li><a href='/#/md/zuoertingfeng/83-程序员练级攻略：分布式架构工程设计.md'>83-程序员练级攻略：分布式架 构工程设计</a></li>
-          <li><a href='/#/md/zuoertingfeng/84-程序员练级攻略：微服务.md'>84-程序员练级攻略：微服务</a></li>
-          <li><a href='/#/md/zuoertingfeng/85-程序员练级攻略：容器化和自动化运维.md'>85-程序员练级攻略：容器化和自动化运维</a></li>
-          <li><a href='/#/md/zuoertingfeng/86-程序员练级攻略：机器学习和人工智能.md'>86-程序员练级攻略：机器学习和人工智能</a></li>
-          <li><a href='/#/md/zuoertingfeng/87-程序员练级攻略：前端基础和底层原理.md'>87-程序员练级攻略：前端基础和底层原理</a></li>
-          <li><a href='/#/md/zuoertingfeng/88-程序员练级攻略：前端性能优化和框架.md'>88-程序员练级攻略：前端性能优化和框架</a></li>
-          <li><a href='/#/md/zuoertingfeng/89-程序员练级攻略：UI-UX设计.md'>89-程序员练级攻略：UI-UX设计</a></li>
-          <li><a href='/#/md/zuoertingfeng/90-程序员练级攻略：技术资源集散地.md'>90-程序员练级攻略：技术资源集散地</a></li>
-          <li><a href='/#/md/zuoertingfeng/91-程序员练级攻略的正确打开方式.md'>91-程序员练级攻略的正确打开方式</a></li>
-          <li><a href='/#/md/zuoertingfeng/92-程序员面试攻略： 面试前的准备.md'>92-程序员面试攻略：面试前的准备</a></li>
-          <li><a href='/#/md/zuoertingfeng/93-程序员面试攻略：面试中的技巧.md'>93-程序员面试攻略：面试中的技巧</a></li>
-          <li><a href='/#/md/zuoertingfeng/94-程序员面试攻略：面试风格.md'>94-程序员面试攻略：面试风格</a></li>
-          <li><a href='/#/md/zuoertingfeng/95-程序员面试攻略：实力才是王中王.md'>95-程序员面试攻略：实力才是 王中王</a></li>
-          <li><a href='/#/md/zuoertingfeng/96-高效学习：端正学习态度.md'>96-高效学习：端正学习态度</a></li>
-          <li><a href='/#/md/zuoertingfeng/97-高效学习：源头、原理和知识地图.md'>97-高效学习：源头、原理和知识地图</a></li>
-          <li><a href='/#/md/zuoertingfeng/98-高效学习：深度，归纳和坚持实践.md'>98-高效学习：深度，归纳和坚持实践</a></li>
-          <li><a href='/#/md/zuoertingfeng/99-高效学习：如何学习和阅读代码.md'>99-高效学习：如何学习和阅读代码</a></li>
-          <li><a href='/#/md/zuoertingfeng/加餐-谈谈 我的“三观”.md'>加餐-谈谈我的“三观”</a></li>
-          <li><a href='/#/md/zuoertingfeng/开篇词-洞悉技术的本质，享受科技的乐趣.md'>开篇词-洞悉技术的本质，享受科技的乐趣</a></li>
-          <li><a href='/#/md/zuoertingfeng/结束语-业精于勤，行成于思.md'>结束语-业精于勤，行成于思</a></li>
-          <li><a href='/#/md/zuoertingfeng/课程迭代｜全新交付117讲音频.md'>课程迭代｜全新交付117讲音频</a></li>
-      </ul>
-      </details>
-
-   - <details>   <summary>GO语言核心三十六讲</summary> 
-          <ul>
-          <li><a href='/#/md/golang36/01-工作区和GOPATH.md'>01-工作区和GOPATH</a></li>
-          <li><a href='/#/md/golang36/02-命令源码文件.md'>02-命令源码文件</a></li>
-          <li><a href='/#/md/golang36/03-库源码文件.md'>03-库源码文件</a></li>
-          <li><a href='/#/md/golang36/04-程序实体的那些事儿（上）.md'>04-程序实体的那些事儿（上）</a></li>
-          <li><a href='/#/md/golang36/05-程序实体的那些事儿（中）.md'>05-程序实体的那些事儿（中）</a></li>
-          <li><a href='/#/md/golang36/06-程序实体的那些事儿（下）.md'>06-程序实体的那些事儿（下）</a></li>
-          <li><a href='/#/md/golang36/07-数组和切片.md'>07-数组和切片</a></li>
-          <li><a href='/#/md/golang36/08-container包中的那些容器.md'>08-container包中的那些容器</a></li>
-          <li><a href='/#/md/golang36/09-字典的操作和约束.md'>09-字典的操作和约束</a></li>
-          <li><a href='/#/md/golang36/10-通道的基本操作.md'>10-通道的基本操作</a></li>
-          <li><a href='/#/md/golang36/11-通道的高级玩法.md'>11-通道的高级玩法</a></li>
-          <li><a href='/#/md/golang36/12-使用函数的正确姿势.md'>12-使用函数的正确姿势</a></li>
-          <li><a href='/#/md/golang36/13-结构体及其方法的使用法门.md'>13-结构体及其方法的使用法门</a></li>
-          <li><a href='/#/md/golang36/14-接口类型的合理运用.md'>14-接口类型的合理运用</a></li>
-          <li><a href='/#/md/golang36/15-关于指针的有限操作.md'>15-关于指针的有限操作</a></li>
-          <li><a href='/#/md/golang36/16-go语句及其执行规则（上）.md'>16-go语句及其执行规则（上）</a></li>
-          <li><a href='/#/md/golang36/17-go语句及其执行规则（下）.md'>17-go语句及其执行规则（下）</a></li>
-          <li><a href='/#/md/golang36/18-if语句、for语句和switch语句.md'>18-if语句、for语句和switch语句</a></li>
-          <li><a href='/#/md/golang36/19-错误处理（上）.md'>19-错误处理（上）</a></li>
-          <li><a href='/#/md/golang36/20-错误处理（下）.md'>20-错误处理（下）</a></li>
-          <li><a href='/#/md/golang36/21-panic函数、recover函数以及defer语句（上）.md'>21-panic函数、recover函数以及defer语句（上）</a></li>
-          <li><a href='/#/md/golang36/22-panic 函数、recover函数以及defer语句（下）.md'>22-panic函数、recover函数以及defer语句（下）</a></li>
-          <li><a href='/#/md/golang36/23-测试的基本规则和流程（上）.md'>23-测试的基本规则和流程（上）</a></li>
-          <li><a href='/#/md/golang36/24-测试的基本规则和流 程（下）.md'>24-测试的基本规则和流程（下）</a></li>
-          <li><a href='/#/md/golang36/25-更多的测试手法.md'>25-更多的测试手法</a></li>
-          <li><a href='/#/md/golang36/26-sync.Mutex与sync.RWMutex.md'>26-sync.Mutex与sync.RWMutex</a></li>
-          <li><a href='/#/md/golang36/27-条件变量sync.Cond（上）.md'>27-条件变量sync.Cond（上）</a></li>
-          <li><a href='/#/md/golang36/28-条件变量sync.Cond（ 下）.md'>28-条件变量sync.Cond（下）</a></li>
-          <li><a href='/#/md/golang36/29-原子操作（上）.md'>29-原子操作（上）</a></li>
-          <li><a href='/#/md/golang36/30-原子操作（下）.md'>30-原子操作（下）</a></li>
-          <li><a href='/#/md/golang36/31-sync.WaitGroup和sync.Once.md'>31-sync.WaitGroup和sync.Once</a></li>
-          <li><a href='/#/md/golang36/32-context.Context类型.md'>32-context.Context 类型</a></li>
-          <li><a href='/#/md/golang36/33-临时对象池sync.Pool.md'>33-临时对象池sync.Pool</a></li>
-          <li><a href='/#/md/golang36/34-并发安全字典sync.Map（上）.md'>34-并发安全字典sync.Map（上）</a></li>
-          <li><a href='/#/md/golang36/35-并发安全字典sync.Map(下).md'>35-并发安全字典sync.Map(下)</a></li>
-          <li><a href='/#/md/golang36/36-unicode与字符编码.md'>36-unicode与字符编码</a></li>
-          <li><a href='/#/md/golang36/37-strings包与字符串操作.md'>37-strings包与字符串操作</a></li>
-          <li><a href='/#/md/golang36/38-bytes包与字节串操作（上）.md'>38-bytes包与字节串操作（上）</a></li>
-          <li><a href='/#/md/golang36/39-bytes包与字节串操 作（下）.md'>39-bytes包与字节串操作（下）</a></li>
-          <li><a href='/#/md/golang36/40-io包中的接口和工具（上）.md'>40-io包中的 接口和工具（上）</a></li>
-          <li><a href='/#/md/golang36/41-io包中的接口和工具（下）.md'>41-io包中的接口和工具（下）</a></li>
-          <li><a href='/#/md/golang36/42-bufio包中的数据类型（上）.md'>42-bufio包中的数据类型（上）</a></li>
-          <li><a href='/#/md/golang36/43-bufio包中的数据类型（下）.md'>43-bufio包中的数据类型（下）</a></li>
-          <li><a href='/#/md/golang36/44-使用os包中的API（上 ）.md'>44-使用os包中的API（上）</a></li>
-          <li><a href='/#/md/golang36/45-使用os包中的API（下）.md'>45-使用os包中的API（下）</a></li>
-          <li><a href='/#/md/golang36/46-访问网络服务.md'>46-访问网络服务</a></li>
-          <li><a href='/#/md/golang36/47-基于HTTP协议 的网络服务.md'>47-基于HTTP协议的网络服务</a></li>
-          <li><a href='/#/md/golang36/48-程序性能分析基础（上）.md'>48-程序性能分析基础（上）</a></li>
-          <li><a href='/#/md/golang36/49-程序性能分析基础（下）.md'>49-程序性能分析基础（下）</a></li>
-          <li><a href='/#/md/golang36/导读-写给0基础入门的Go语言学习者.md'>导读-写给0基础入门的Go语言学习者</a></li>
-          <li><a href='/#/md/golang36/ 导读-学习专栏的正确姿势.md'>导读-学习专栏的正确姿势</a></li>
-          <li><a href='/#/md/golang36/尾声-愿你披荆斩棘，所向无敌.md'>尾声-愿你披荆斩棘，所向无敌</a></li>
-          <li><a href='/#/md/golang36/开篇词-跟着学，你也能成为Go语言高手.md'>开篇词-跟着学，你也 能成为Go语言高手</a></li>
-          <li><a href='/#/md/golang36/新年彩蛋-完整版思考题答案.md'>新年彩蛋-完整版思考题答案</a></li>
-          <li><a href='/#/md/golang36/结课测试-这些Go语言的知识你都掌握了吗？.md'>结课测试-这些Go语言的知识你都掌握了吗？</a></li>
-      </ul>
-      </details>
-
-   - <details>   <summary>数据库</summary> 
-          <ul>
-          <li><a href='/#/md/2023-06-14-MySQL学习记录.md'>2023-06-14-MySQL学习记录</a></li>
-          <li><a href='/#/md/Index.md'>Index</a></li>
-      </ul>
-      </details>
