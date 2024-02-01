@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="Cache" content="no-cache">
+    <title>GOWIOT接口文档</title>
+    <link href="https://img.cdn.apipost.cn/docs/css7/style.css?20220909" rel="stylesheet">
+    <link href="https://img.cdn.apipost.cn/docs/css/font-awesome-4.7.0/css/font-awesome.min.css?20220909" rel="stylesheet">
+    <link href="https://img.cdn.apipost.cn/docs/css7/github.css?20220909" rel="stylesheet">
+    <link rel="stylesheet" href="https://img.cdn.apipost.cn/docs/css7/content-v7.css?20220909">
+    <link href="https://img.cdn.apipost.cn/docs/css7/json-viewer.css?20220909" rel="stylesheet">
+    <script type="text/javascript" src="https://img.cdn.apipost.cn/docs/js/jquery-3.4.1.min.js?20220909"></script>
+    <script type="text/javascript" src="https://img.cdn.apipost.cn/docs/js7/marked.min.js?20220909"></script>
+    <script type="text/javascript" src="https://img.cdn.apipost.cn/docs/js7/template-web.js?20220909"></script>
+    <script type="text/javascript" src="https://img.cdn.apipost.cn/docs/js7/highlight.js?20220909"></script>
+    <script type="text/javascript" src="https://img.cdn.apipost.cn/docs/js7/clipboard.min.js?20220909"></script>
+    <script type="text/javascript" src="https://img.cdn.apipost.cn/docs/js7/crypto-js.min.js?20220909" charset="utf-8"></script>
+    <script type="text/javascript" src="https://img.cdn.apipost.cn/docs/js/json5.min.js?20220909"></script>
+    <script type="text/javascript" src="https://img.cdn.apipost.cn/docs/js/dayjs.min.js?20220909"></script>
+    <script type="text/javascript" src="https://img.cdn.apipost.cn/docs/js/url-join.js?20220909"></script>
+    <!-- <script type="text/javascript" src="./js/enc.min.js"></script> -->
+    <script type="text/javascript" src="https://img.cdn.apipost.cn/docs/js/json-viewer.min.js?20220909"></script>
+    <script type="text/javascript" src="https://img.cdn.apipost.cn/docs/js/lodash.min.js?20220909"></script>
+    <script type="text/javascript">
+        consoleLog = console.log; // 重写 consoleLog
+        $(function () {
+
+        })
+    </script>
+</head>
+
+<body>
+<div class="apipost-doc-body">
+    <div class="apipost-doc-body-main">
+        <div class="apipost-doc-body-nav">
+            <div class="logo">
+                <a href="https://seelly.github.com/"><img class="project-logo" src="https://img.cdn.apipost.cn/docs/images7/logo.svg" /></a>
+            </div>
+            <div class="apipost-doc-body-nav-search">
+                <img src="https://img.cdn.apipost.cn/docs/images7/search-icon.svg">
+                <input type="text" name="search-input" placeholder="搜索目录、接口。支持 名称、URL、Method 搜索">
+            </div>
+            <div class="apipost-doc-body-nav-title"> 项目名 </div>
+            <div class="apipost-doc-body-nav-list">
+                <ul>
+                    <li data-type="global" data-parent_id="0" data-target_id="001" data-indent="0"
+                        class="global active">
+                        <a class="load-data-btn" href="javascript:;" data-type="global" data-parent_id="0"
+                           data-target_id="001" data-indent="0">全局公共参数</a>
+                    </li>
+                </ul>
+                <ul class="apipost-left-nav-template">
+                    <script type="text/html" id="apipost-left-nav-template-tpl">
+                        {{if _.isArray(list)}}
+                        {{each list item}}
+                        {{if !item.indent}}
+                        {{set indent = item.indent = 0}}
+                        {{/if}}
+                        <li data-type="{{item.target_type}}" data-parent_id="{{item.parent_id}}" data-target_id="{{item.target_id}}" data-indent="{{item.indent}}" class="{{item.target_type}} {{if target_id == item.target_id}}active{{/if}} {{if item.indent != 0}}is-hidden{{/if}}" style="padding-left: {{item.indent?item.indent:0}}em;">
+                            {{if item.target_type == 'folder' || item.example_type == 'folder'}}
+                            <a class="load-data-btn" href="javascript:;" data-type="{{item.target_type}}" data-parent_id="{{item.parent_id}}" data-target_id="{{item.local_target_id}}" data-indent="{{item.indent}}"><i class="fa fa-caret-down"></i>{{item.name}}</a>
+                            {{else if item.target_type == 'websocket' || item.example_type == 'websocket'}}
+                            <a class="load-data-btn" href="javascript:;" data-type="{{item.target_type}}" data-parent_id="{{item.parent_id}}" data-target_id="{{item.local_target_id}}" data-indent="{{item.indent}}"><em class="method websocket">WS</em><span>{{item.name}}</span></a>
+                            {{else if item.target_type == 'doc' || item.example_type == 'doc'}}
+                            <a class="load-data-btn" href="javascript:;" data-type="{{item.target_type}}" data-parent_id="{{item.parent_id}}" data-target_id="{{item.local_target_id}}" data-indent="{{item.indent}}"><em class="method doc">文本</em><span>{{item.name}}</span></a>
+                            {{else if item.target_type == 'grpc' || item.example_type == 'grpc'}}
+                            <a class="load-data-btn" href="javascript:;" data-type="{{item.target_type}}" data-parent_id="{{item.parent_id}}" data-target_id="{{item.local_target_id}}" data-indent="{{item.indent}}"><em class="method grpc">GRPC</em><span>{{item.name}}</span></a>
+                            {{else}}
+                            <a class="load-data-btn" href="javascript:;" data-type="{{item.target_type}}" data-parent_id="{{item.parent_id}}" data-target_id="{{item.local_target_id}}" data-indent="{{item.indent}}"><em class="method {{item.method}}">{{item.method}}</em><span>{{item.name}}</span></a>
+                            {{/if}}
+                            {{if item.target_type != 'folder' && item.color}}
+                            <span style="margin-left:5px;display:inline-block;width:6px;height:6px;border-radius:50%;background-color: {{item.color}};"></span>
+
+
+
+                            {{/if}}
+                            {{if item.target_type == 'example'}}
+                            <svg style="margin-left:5px;" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.91033 6.68207H3.30033C3.09013 6.68207 2.94513 6.4768 3.01993 6.28529L4.61973 2.18849C4.64137 2.13306 4.67976 2.08536 4.72982 2.0517C4.77987 2.01804 4.83923 2.00001 4.90003 2H7.59962C7.81262 2 7.95782 2.21054 7.87742 2.40303L6.94592 4.63367H8.69951C8.95741 4.63367 9.09501 4.93026 8.92491 5.11933L4.62553 9.89887C4.41653 10.1313 4.02903 9.92989 4.11013 9.63106L4.91033 6.68207Z" fill="#FFC01E"/>
+                            </svg>
+                            {{/if}}
+                        </li>
+                        {{if _.isArray(item.children)}}
+                        {{each item.children as childrenItem key}}
+                        {{if item.children[key].indent}}
+                        {{set indent = item.children[key].indent = item.children[key].indent+2}}
+                        {{else}}
+                        {{set indent = item.children[key].indent = item.indent + 2}}
+                        {{/if}}
+                        {{/each}}
+
+                        {{set _recursiveList ={list:item.children}; }}
+                        {{include 'apipost-left-nav-template-tpl' _recursiveList}}
+                        {{/if}}
+                        {{/each}}
+                        {{/if}}
+                    </script>
+                </ul>
+            </div>
+            <div class="apipost-doc-body-nav-drag-bar"></div>
+        </div>
+        <div class="apipost-doc-body-content">
+            <div class="apipost-doc-wrap">
+                <script type="text/html" id="apipost-doc-wrap-tpl">
+                    <div class="apipost-doc-wrap-title">
+                        <h2 class="title" data-text="{{data.name}}" id="{{data.name}}">
+                            <div class="mobile-nav-toggle-btn">
+                                <a href="javascript:;" class="mobile-nav-toggle-link-btn"><i class="fa fa-reorder"></i></a>
+                            </div>
+                            <div class="title-text">{{data.name}}</div>
+                            {{if data.target_type == 'api' || data.example_type == 'api'}}
+                            <button type="button" class="copy-clipboard" data-clipboard-text="{{JSON.stringify(data.copyData)}}"><i class="fa fa-copy"></i> 复制接口 </button>
+                            {{/if}}
+                            {{if data.target_type == 'api' || data.target_type == 'grpc' || data.target_type == 'websocket' || data.example_type == 'api' || data.example_type == 'grpc' || data.example_type == 'websocket'}}
+                            <a type="button" class="copy-clipboard" data-clipboard-text="{{JSON.stringify(data)}}" href="https://v7.apipost.cn/#/apis/run?target_id={{data.target_id}}" target="_blank">去调试</a>
+                            {{/if}}
+                        </h2>
+                    </div>
+                    <div class="apipost-doc-wrap-desc">
+                        <!-- 创建人：哈利厄 最后更新：哈利厄 &nbsp;&nbsp; -->
+                        创建时间：{{data.format_create_dtime}} &nbsp;&nbsp;更新时间：{{data.format_update_dtime}}
+                    </div>
+                    {{if _.has(data, 'request.description')}}
+                    <div class="apipost-doc-wrap-para-markdown">
+                        <div class="markdown-section">{{@marked(data.request.description)}}</div>
+                    </div>
+                    {{/if}}
+                    {{if data.target_type == 'grpc' || data.example_type == 'grpc'}}
+                    <h3 class="apipost-doc-wrap-para-title" data-text="基本信息" id="基本信息">
+                        <i class="fa fa-wpforms"></i>
+                        <span>基本信息</span>
+                    </h3>
+                    <ul class="apipost-doc-wrap-base-para">
+                        {{if _.has(data, 'formatMark') && _.isObject(data.formatMark)}}
+                        <li><span>接口状态： </span><span style="color: {{data.formatMark.color}};">{{data.formatMark.name}}</span> </li>
+                        {{/if}}
+                    </ul>
+                    {{if _.has(data, 'protos') && _.isObject(data.protos) && Object.values(data.protos).length > 0}}
+                    <h3 class="apipost-doc-wrap-para-title" data-text="方法列表" id="方法列表">
+                        <i class="fa fa-wpforms"></i>
+                        <span>方法列表</span>
+                    </h3>
+                    {{each data.protos item key}}
+                    {{if _.has(item, 'services') && _.isObject(item.services) && !_.isEmpty(item.services)}}
+                    <h4 class="apipost-doc-wrap-para-title" data-text="{{key}}" id="{{key}}">
+                        <span>{{key}}</span>
+                    </h4>
+                    <div class="apipost-doc-paras" for-id="{{key}}">
+                        {{each item.services service namespace}}
+                        {{if _.isObject(service)}}
+                        {{each service method methodName}}
+                        <h5 data-text="{{namespace}}/{{methodName}}" id="{{namespace}}/{{methodName}}"><a name="{{key}}/{{namespace}}/{{methodName}}">[method]</a> {{key}}/{{namespace}}/{{methodName}}</h5>
+                        <ul class="apipost-doc-wrap-base-para">
+                            <li><span>方法名： </span><span><i class="copy-clipboard"  data-clipboard-text="{{methodName}}">{{methodName}}</i></span> </li>
+                            <li><span>服务地址： </span><span><i class="copy-clipboard"  data-clipboard-text="{{method.url}}">{{method.url}}</i></span> </li>
+                        </ul>
+                        {{if _.has(method, 'request.body.raw') && method.request.body.raw != ''}}
+                        <h6 data-text="请求参数" id="请求参数">请求参数</h6>
+                        <div class="apipost-raw-json request-body-json-view">
+                            <button type="button" class="copy-clipboard" data-clipboard-text="{{method.request.body.raw}}"><i class="fa fa-clipboard"></i>复制</button>
+                            <input type="hidden" id="request-body-raw-editor-input-{{methodName}}" value='{{method.request.body.raw}}'>
+                            <pre class="request-body-raw-editor-json" id="request-body-raw-editor-json-{{methodName}}"><code class="json">{{method.request.body.raw}}</code></pre>
+                        </div>
+                        {{if _.has(method, 'request.body.parameter') && _.isArray(method.request.body.parameter) && method.request.body.parameter.length > 0}}
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+                                <th>是否必填</th>
+                                <th>参数类型</th>
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each method.request.body.parameter item}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td style="position: relative;">
+                                    {{if item.value_var}}
+                                    {{item.value_var}}
+                                    <img src="https://img.cdn.apipost.cn/v6/docs/img/vars.svg" alt="">
+                                    <div class="vars_title">
+                                        变量{{item.value}} 生成
+                                    </div>
+                                    {{else}}
+                                    <pre>{{item.value}}</pre>
+                                    {{/if}}
+                                </td>
+                                <td>{{(item.not_null >0) ? '是' : '否'}}</td>
+                                <td>{{item.field_type}}</td>
+                                <td>
+                                    <pre>{{item.description}}</pre>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{/if}}
+                        {{if _.has(method, 'response') && _.isObject(method.response) && !_.isEmpty(method.response)}}
+                        {{each method.response response name}}
+                        {{if response.raw != ''}}
+                        <h6 data-text="{{name == 'success' ? '成功响应示例':'错误响应示例'}}" id="{{name == 'success' ? '成功响应示例':'错误响应示例'}}">{{name == 'success' ? '成功响应示例':'错误响应示例'}}</h6>
+                        <div class="apipost-raw-json response-body-json-view">
+                            <button type="button" class="copy-clipboard" data-clipboard-text="{{response.raw}}"><i class="fa fa-clipboard"></i>复制</button>
+                            <input type="hidden" id="response-body-raw-editor-input-{{name}}" value='{{response.raw}}'>
+                            <pre class="request-body-raw-editor-json" id="response-body-raw-editor-json-{{name}}"><code class="json">{{response.raw}}</code></pre>
+                        </div>
+                        {{if _.has(response, 'parameter') && _.isArray(response.parameter) && response.parameter.length > 0}}
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+                                <th>是否必填</th>
+                                <th>参数类型</th>
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each response.parameter item}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td>
+                                    <pre>{{item.value}}</pre>
+                                </td>
+                                <td>{{(item.not_null >0) ? '是' : '否'}}</td>
+                                <td>{{item.field_type}}</td>
+                                <td>
+                                    <pre>{{item.description}}</pre>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{/if}}
+                        {{/each}}
+                        {{/if}}
+                        <hr>
+                        {{/each}}
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                    {{/if}}
+                    {{/if}}
+                    {{if data.target_type == 'folder'}}
+                    <h3 class="apipost-doc-wrap-para-title" data-text="目录参数" id="目录参数">
+                        <i class="fa fa-wpforms"></i>
+                        <span>目录参数</span>
+                    </h3>
+                    <div class="apipost-doc-paras" for-id="目录参数">
+                        {{if _.has(data, 'request.header') && _.isArray(data.request.header) && data.request.header.length > 0}}
+                        <h4 data-text="Header 请求参数" id="Header 请求参数">Header 请求参数</h4>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+                                <th>是否必填</th>
+                                <th>参数类型</th>
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each data.request.header item}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td style="position: relative;">
+                                    {{if item.value_var}}
+                                    {{item.value_var}}
+                                    <img src="https://img.cdn.apipost.cn/v6/docs/img/vars.svg" alt="">
+                                    <div class="vars_title">
+                                        变量{{item.value}} 生成
+                                    </div>
+                                    {{else}}
+                                    <pre>{{item.value}}</pre>
+                                    {{/if}}
+                                </td>
+                                <td>{{(item.not_null >0) ? '是' : '否'}}</td>
+                                <td>{{item.field_type}}</td>
+                                <td>
+                                    <pre>{{item.description}}</pre>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{if _.has(data, 'request.query') && _.isArray(data.request.query) && data.request.query.length > 0}}
+                        <h4 data-text="Query 请求参数" id="Query 请求参数">Query 请求参数</h4>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+                                <th>是否必填</th>
+                                <th>参数类型</th>
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each data.request.query item}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td style="position: relative;">
+                                    {{if item.value_var}}
+                                    {{item.value_var}}
+                                    <img src="https://img.cdn.apipost.cn/v6/docs/img/vars.svg" alt="">
+                                    <div class="vars_title">
+                                        变量{{item.value}} 生成
+                                    </div>
+                                    {{else}}
+                                    <pre>{{item.value}}</pre>
+                                    {{/if}}
+                                </td>
+                                <td>{{(item.not_null >0) ? '是' : '否'}}</td>
+                                <td>{{item.field_type}}</td>
+                                <td>
+                                    <pre>{{item.description}}</pre>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{if _.has(data, 'request.body') && _.isArray(data.request.body) && data.request.body.length > 0}}
+                        <h4 data-text="Body 请求参数" id="Body 请求参数">Body 请求参数</h4>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+                                <th>是否必填</th>
+                                <th>参数类型</th>
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each data.request.body item}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td style="position: relative;">
+                                    {{if item.value_var}}
+                                    {{item.value_var}}
+                                    <img src="https://img.cdn.apipost.cn/v6/docs/img/vars.svg" alt="">
+                                    <div class="vars_title">
+                                        变量{{item.value}} 生成
+                                    </div>
+                                    {{else}}
+                                    <pre>{{item.type == 'File' ? '[文件路径]':item.value}}</pre>
+                                    {{/if}}
+                                </td>
+                                <td>{{(item.not_null >0) ? '是' : '否'}}</td>
+                                <td>{{item.type == 'File' ? '[文件类型]':item.field_type}}</td>
+                                <td>
+                                    <pre>{{item.description}}</pre>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{if _.has(data, 'request.authType')}}
+                        <h4 data-text="认证方式" id="认证方式">认证方式</h4>
+                        <ul class="apipost-doc-wrap-base-para">
+                            <li>{{data.request.authType}}</li>
+                        </ul>
+                        {{/if}}
+                    </div>
+                    {{/if}}
+                    {{if data.target_type == 'global'}}
+                    <div class="apipost-global-tips">
+                        说明：全局公共参数是针对项目而言的，所有请求的 HTTP 类型的接口都需要携带此参数。
+                    </div>
+                    <h3 data-text="全局公共参数" id="全局公共参数" class="apipost-doc-wrap-para-title">
+                        <i class="fa fa-wpforms"></i>
+                        <span>全局公共参数</span>
+                    </h3>
+                    <div class="apipost-doc-paras" for-id="全局公共参数">
+                        {{if _.has(data, 'request.header') && _.isArray(data.request.header) && data.request.header.length > 0}}
+                        <h4 data-text="Header 请求参数" id="Header 请求参数" >Header 请求参数</h4>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+
+
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each data.request.header item}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td style="position: relative;">
+                                    {{if item.value_var}}
+                                    {{item.value_var}}
+                                    <img src="https://img.cdn.apipost.cn/v6/docs/img/vars.svg" alt="">
+                                    <div class="vars_title">
+                                        变量{{item.value}} 生成
+                                    </div>
+                                    {{else}}
+                                    <pre>{{item.value}}</pre>
+                                    {{/if}}
+                                </td>
+
+
+                                <td>
+                                    <pre>{{item.description}}</pre>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{if _.has(data, 'request.query') && _.isArray(data.request.query) && data.request.query.length > 0}}
+                        <h4 data-text="Query 请求参数" id="Query 请求参数">Query 请求参数</h4>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+
+
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each data.request.query item}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td style="position: relative;">
+                                    {{if item.value_var}}
+                                    {{item.value_var}}
+                                    <img src="https://img.cdn.apipost.cn/v6/docs/img/vars.svg" alt="">
+                                    <div class="vars_title">
+                                        变量{{item.value}} 生成
+                                    </div>
+                                    {{else}}
+                                    <pre>{{item.value}}</pre>
+                                    {{/if}}
+                                </td>
+
+
+                                <td>
+                                    <pre>{{item.description}}</pre>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{if _.has(data, 'request.body') && _.isArray(data.request.body) && data.request.body.length > 0}}
+                        <h4 data-text="Body 请求参数" id="Body 请求参数">Body 请求参数</h4>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+
+
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each data.request.body item}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td style="position: relative;">
+                                    {{if item.value_var}}
+                                    {{item.value_var}}
+                                    <img src="https://img.cdn.apipost.cn/v6/docs/img/vars.svg" alt="">
+                                    <div class="vars_title">
+                                        变量{{item.value}} 生成
+                                    </div>
+                                    {{else}}
+                                    <pre>{{item.type == 'File' ? '[文件路径]':item.value}}</pre>
+                                    {{/if}}
+                                </td>
+
+
+                                <td>
+                                    <pre>{{item.description}}</pre>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{if _.has(data, 'script.auth.type')}}
+                        <h4 data-text="认证方式" id="认证方式">认证方式</h4>
+                        <ul class="apipost-doc-wrap-base-para">
+                            <li>{{data.script.auth.type}}</li>
+                        </ul>
+                        {{/if}}
+                    </div>
+                    {{/if}}
+                    {{if data.target_type == 'websocket' || data.example_type == 'websocket'}}
+                    <h3 data-text="基本信息" id="基本信息" class="apipost-doc-wrap-para-title">
+                        <i class="fa fa-wpforms"></i>
+                        <span>基本信息</span>
+                    </h3>
+                    <ul class="apipost-doc-wrap-base-para">
+                        {{if _.has(data, 'formatMark') && _.isObject(data.formatMark)}}
+                        <li><span>接口状态： </span><span style="color: {{data.formatMark.color}};">{{data.formatMark.name}}</span> </li>
+                        {{/if}}
+                        <li><span>接口URL： </span><span><em class="method {{data.method}}">{{data.method}}</em>
+                                <i class="copy-clipboard"  data-clipboard-text="{{data.url}}">{{data.url}}</i></span> </li>
+                    </ul>
+                    {{/if}}
+                    {{if data.target_type == 'api' || data.example_type == 'api'}}
+                    <h3 data-text="基本信息" id="基本信息" class="apipost-doc-wrap-para-title">
+                        <i class="fa fa-wpforms"></i>
+                        <span>基本信息</span>
+                    </h3>
+                    <ul class="apipost-doc-wrap-base-para">
+                        {{if _.has(data, 'formatMark') && _.isObject(data.formatMark)}}
+                        <li><span>接口状态： </span><span style="color: {{data.formatMark.color}};">{{data.formatMark.name}}</span> </li>
+                        {{/if}}
+                        <li><span>接口URL： </span><span><em class="method {{data.method}}">{{data.method}}</em>
+                                <i class="copy-clipboard"  data-clipboard-text="{{data.url}}">{{data.url}}</i></span> </li>
+                        {{if data.mock_url != ''}}
+                        <li><span>本地 Mock： </span><span><i class="copy-clipboard"  data-clipboard-text="{{urlJoin('http://127.0.0.1:10393/mock/',data.project_id, data.mock_url,'?apipost_id='+data.target_id.toString().substr(0,6))}}">{{urlJoin('http://127.0.0.1:10393/mock/',data.project_id, data.mock_url,'?apipost_id='+data.target_id.toString().substr(0,6))}}</i><br><a href="https://www.apipost.cn/download.html" target="_blank">需安装 Apipost v7 客户端</a> </span> </li>
+                        {{if data.enable_server_mock > 0}}
+                        <li><span>云端 Mock： </span><span><i class="copy-clipboard"  data-clipboard-text="{{urlJoin('https://console-mock.apipost.cn/mock/',data.project_id, data.mock_url,'?apipost_id='+data.target_id.toString().substr(0,6))}}">{{urlJoin('https://console-mock.apipost.cn/mock/',data.project_id, data.mock_url,'?apipost_id='+data.target_id.toString().substr(0,6))}}</i></span> </li>
+                        {{/if}}
+                        {{/if}}
+                        {{if _.has(data, 'request.body.formatMode')}}
+                        <li><span>Content-Type：</span><span><i class="copy-clipboard" data-clipboard-text="{{data.request.body.formatMode}}">{{data.request.body.formatMode}}</i></span></li>
+                        {{/if}}
+                        {{if _.has(data, 'request.authType')}}
+                        <li><span>认证方式：</span><span><i class="copy-clipboard" data-clipboard-text="{{data.request.authType}}">{{data.request.authType}}</i></span></li>
+                        {{/if}}
+                    </ul>
+                    <h3 data-text="请求参数" id="请求参数" class="apipost-doc-wrap-para-title">
+                        <i class="fa fa-wpforms"></i>
+                        <span>请求参数</span>
+                    </h3>
+                    <div class="apipost-doc-paras" for-id="请求参数">
+                        {{if _.has(data, 'request.header.parameter') && _.isArray(data.request.header.parameter) && data.request.header.parameter.length > 0}}
+                        <h4 data-text="Header 请求参数" id="Header 请求参数" >Header 请求参数</h4>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+                                <th>是否必填</th>
+                                <th>参数类型</th>
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each data.request.header.parameter item}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td style="position: relative;">
+                                    {{if item.value_var}}
+                                    {{item.value_var}}
+                                    <img src="https://img.cdn.apipost.cn/v6/docs/img/vars.svg" alt="">
+                                    <div class="vars_title">
+                                        变量{{item.value}} 生成
+                                    </div>
+                                    {{else}}
+                                    <pre>{{item.value}}</pre>
+                                    {{/if}}
+                                </td>
+                                <td>{{(item.not_null >0) ? '是' : '否'}}</td>
+                                <td>{{item.field_type}}</td>
+                                <td>
+                                    <pre>{{item.description}}</pre>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{if _.has(data, 'request.query.parameter') && _.isArray(data.request.query.parameter) && data.request.query.parameter.length > 0}}
+                        <h4 data-text="Query 请求参数" id="Query 请求参数" >Query 请求参数</h4>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+                                <th>是否必填</th>
+                                <th>参数类型</th>
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each data.request.query.parameter item}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td style="position: relative;">
+                                    {{if item.value_var}}
+                                    {{item.value_var}}
+                                    <img src="https://img.cdn.apipost.cn/v6/docs/img/vars.svg" alt="">
+                                    <div class="vars_title">
+                                        变量{{item.value}} 生成
+                                    </div>
+                                    {{else}}
+                                    <pre>{{item.type == 'File' ? '[文件路径]':item.value}}</pre>
+                                    {{/if}}
+                                </td>
+                                <td>{{(item.not_null >0) ? '是' : '否'}}</td>
+                                <td>{{item.field_type}}</td>
+                                <td>
+                                    <pre>{{item.description}}</pre>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{if _.has(data, 'request.resful.parameter') && _.isArray(data.request.resful.parameter) && data.request.resful.parameter.length > 0}}
+                        <h4 data-text="路径参数及说明" id="路径参数及说明" >路径参数及说明</h4>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each data.request.resful.parameter item}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td style="position: relative;">
+                                    {{if item.value_var}}
+                                    {{item.value_var}}
+                                    <img src="https://img.cdn.apipost.cn/v6/docs/img/vars.svg" alt="">
+                                    <div class="vars_title">
+                                        变量{{item.value}} 生成
+                                    </div>
+                                    {{else}}
+                                    <pre>{{item.type == 'File' ? '[文件路径]':item.value}}</pre>
+                                    {{/if}}
+                                </td>
+                                <td>
+                                    <pre>{{item.description}}</pre>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{if _.has(data, 'request.body.mode') && data.request.body.mode != 'none'}}
+                        <h4 data-text="Body 请求参数" id="Body 请求参数" >Body 请求参数</h4>
+                        {{if data.request.body.mode == 'form-data' || data.request.body.mode == 'urlencoded'}}
+                        {{if _.has(data, 'request.body.parameter') && _.isArray(data.request.body.parameter) && data.request.body.parameter.length > 0}}
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+                                <th>是否必填</th>
+                                <th>参数类型</th>
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each data.request.body.parameter item}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td style="position: relative;">
+                                    {{if item.value_var}}
+                                    {{item.value_var}}
+                                    <img src="https://img.cdn.apipost.cn/v6/docs/img/vars.svg" alt="">
+                                    <div class="vars_title">
+                                        变量{{item.value}} 生成
+                                    </div>
+                                    {{else}}
+                                    <pre>{{item.type == 'File' ? '[文件路径]':item.value}}</pre>
+                                    {{/if}}
+                                </td>
+                                <td>{{(item.not_null >0) ? '是' : '否'}}</td>
+                                <td>{{item.type == 'File' ? '[文件类型]':item.field_type}}</td>
+                                <td>
+                                    <pre>{{item.description}}</pre>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{else}}
+                        {{if data.request.body.raw != ''}}
+                        <div class="apipost-raw-json request-body-json-view">
+                            <button type="button" class="copy-clipboard" data-clipboard-text="{{data.request.body.raw}}"><i class="fa fa-clipboard"></i>复制</button>
+                            <input type="hidden" id="request-body-raw-editor-input" value='{{data.request.body.raw}}'>
+                            <pre id="request-body-raw-editor-json"><code class="json">{{data.request.body.raw}}</code></pre>
+                        </div>
+                        {{if _.has(data, 'request.body.raw_para') && _.isArray(data.request.body.raw_para) && data.request.body.raw_para.length > 0}}
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+                                <th>是否必填</th>
+                                <th>参数类型</th>
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each data.request.body.raw_para item}}
+                            {{if item.key != ''}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td style="position: relative;">
+                                    {{if item.value_var}}
+                                    {{item.value_var}}
+                                    <img src="https://img.cdn.apipost.cn/v6/docs/img/vars.svg" alt="">
+                                    <div class="vars_title">
+                                        变量{{item.value}} 生成
+                                    </div>
+                                    {{else}}
+                                    <pre>{{item.value}}</pre>
+                                    {{/if}}
+                                </td>
+                                <td>{{(item.not_null >0) ? '是' : '否'}}</td>
+                                <td>{{item.field_type}}</td>
+                                <td>
+                                    <pre>{{item.description}}</pre>
+                                </td>
+                            </tr>
+                            {{/if}}
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{/if}}
+                        {{/if}}
+                        {{/if}}
+                    </div>
+                    {{if _.has(data, 'response') && _.isObject(data.response) && Object.values(data.response).length > 0}}
+                    <h3 data-text="响应示例" id="响应示例" class="apipost-doc-wrap-para-title">
+                        <i class="fa fa-wpforms"></i>
+                        <span>响应示例</span>
+                    </h3>
+                    <div class="apipost-doc-paras" for-id="响应示例">
+                        {{each data.response item key}}
+                        {{if _.has(item, 'expect.name') && item.raw != ''}}
+                        <h4 data-text="{{item.expect.name}}（{{item.expect.code}}）" id="{{item.expect.name}}（{{item.expect.code}}）">{{item.expect.name}}（{{item.expect.code}}）</h4>
+                        <div data-type="{{key}}" class="apipost-raw-json response-raw-json-view">
+                            <button type="button" class="copy-clipboard" data-clipboard-text="{{item.raw}}"><i class="fa fa-clipboard"></i>复制</button>
+                            <input type="hidden" id="response-raw-{{key}}-json-input" value='{{item.raw}}'>
+                            <pre id="response-raw-{{key}}-json"><code class="json">{{item.raw}}</code></pre>
+                        </div>
+                        {{if _.has(item, 'parameter') && _.isArray(item.parameter) && item.parameter.length > 0}}
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>参数名</th>
+                                <th>参数值</th>
+                                <!-- <th>是否必填</th> -->
+                                <th>参数类型</th>
+                                <th>描述说明</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {{each item.parameter item}}
+                            {{if item.key != ''}}
+                            <tr>
+                                <td><i class="copy-clipboard"  data-clipboard-text="{{item.key}}">{{item.key}}</i></td>
+                                <td>
+                                    <pre>{{item.value}}</pre>
+                                </td>
+                                <!-- <td>{{(item.not_null >0) ? '是' : '否'}}</td> -->
+                                <td>{{item.field_type}}</td>
+                                <td>
+                                    <pre>{{@replaceOperatorSymbol(item.description)}}</pre>
+                                </td>
+                            </tr>
+                            {{/if}}
+                            {{/each}}
+                            </tbody>
+                        </table>
+                        {{/if}}
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                    {{/if}}
+                    <footer> 本文档由 <a href="" target="_blank">Apipost 接口管理工具 </a>
+                        生成 </footer>
+                </script>
+            </div>
+            <div class="apipost-float-navs">
+                <h2>内容导航</h2>
+                <ul class="apipost-float-nav-template">
+                    <script type="text/html" id="apipost-float-nav-template-tpl">
+                        {{if list.length > 0}}
+                        {{each list item i}}
+                        <li style="text-indent: {{item.indent*16}}px;" {{if i == 0}}class="active"{{/if}} data-id="{{item.id}}"><a href="#{{item.id}}">{{item.text}}</a></li>
+                        {{/each}}
+                        {{else}}
+                        <li style="text-align: center;justify-content: center;">暂无导航数据</li>
+                        {{/if}}
+                    </script>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    // 给 arttemplate 注入新函数
+    template.defaults.imports.JSON = JSON;
+    template.defaults.imports.urlJoin = urlJoin;
+    template.defaults.imports._ = _;
+    template.defaults.imports.marked = function (md) {
+        marked.setOptions({
+            renderer: new marked.Renderer(),
+            highlight(code) {
+                return hljs.highlight('javascript', code).value;
+            },
+            breaks: true,
+            sanitize: true,
+        });
+        return marked.parse(md).replace(/<pre>/g, "<pre class='hljs javascript'>");
+    };
+    template.defaults.imports.Object = Object;
+    template.defaults.imports.keyFormat = function (params) {
+        const arr = params.split('.');
+        let str = '';
+        for (let i = 0; i < arr.length - 1; i++) {
+            str += `<span style="color:#999">${arr[i]}.</span>`;
+        }
+        str += arr[arr.length - 1];
+        return str;
+    };
+    template.defaults.imports.replaceOperatorSymbol = function (originString) {
+        if (!originString || originString=='') {
+            return '';
+        }
+        const result = originString.replace(/&([^&;]+);/g, function (matchStr, b) {
+            const entity = {
+                quot: '"',
+                lt: '<',
+                gt: '>',
+                apos: "'",
+                amp: '&',
+                ldquo: '“',
+                rdquo: '”',
+            };
+            const r = entity[b];
+            return typeof r === 'string' ? r : matchStr;
+        });
+        return result;
+    };
+    template.defaults.imports.markForName = function (key) {
+        try {
+            if (apipostData.project.vars.mark.filter((it) => it.key === key)[0].name) {
+                return apipostData.project.vars.mark.filter((it) => it.key === key)[0].name;
+            }
+            return '开发中';
+        } catch (error) {
+            return '开发中';
+        }
+    };
+
+    // 接口排序
+    function sortData(data, type) {
+        data.sort((a, b) => {
+            // 升序
+            if (type == 'ascending') {
+                if (a.sort != b.sort) {
+                    return a.sort - b.sort;
+                }
+                return a.name.localeCompare(b.name);
+            }
+            // 降序
+            if (type == 'descending') {
+                if (a.sort != b.sort) {
+                    return b.sort - a.sort;
+                }
+                return b.name.localeCompare(a.name);
+            }
+        });
+
+        // 如果有嵌套children且children里面有数据 就递归调用排序函数
+        if (_.isArray(data)) {
+            data.forEach((item) => {
+                if (item.children && item.children.length != 0) {
+                    sortData(item.children, type);
+                }
+            });
+
+            return data;
+        }
+        return [];
+    }
+
+    // 解析 url 并返回数组
+    function GetUrlQuery(uri) {
+        let url = '';
+        if (typeof uri === 'undefined') {
+            url = window.location.search;
+        } else {
+            url = `?${uri.split('?')[1]}`;
+        }
+        const theRequest = {};
+        if (url.indexOf('?') !== -1) {
+            const str = url.substr(1);
+            const strs = str.split('&');
+            for (let i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split('=')[0]] = unescape(strs[i].split('=')[1]);
+            }
+        }
+        return theRequest;
+    }
+
+    // 获取某接口的 所有父target
+    function getParentTargetIDs(collection, target_id, parent_ids = []) {
+        if (_.isArray(collection)) {
+            const item = _.find(collection, _.matchesProperty('target_id', target_id));
+
+            if (item) {
+                parent_ids.push(item.parent_id);
+                getParentTargetIDs(collection, item.parent_id, parent_ids);
+            }
+        }
+
+        return parent_ids;
+    }
+
+    // 获取某接口的 所有子target
+    function getChildrenTargetIDs(collection, target_id, children_ids = []) {
+        if (_.isArray(collection)) {
+            collection.forEach(item => {
+                if (item.parent_id == target_id) {
+                    children_ids.push(item.target_id);
+                    getChildrenTargetIDs(collection, item.target_id, children_ids);
+                }
+            })
+        }
+
+        return children_ids;
+    }
+
+    // // 获取某接口的 所有子target
+    // function getChildrenTargetIDs(collection, target_id, children_ids = []) {
+    //     if (_.isArray(collection)) {
+    //         collection.forEach(item => {
+    //             if (item.target_id == target_id) {
+    //                 if (item.children && _.isArray(item.children)) {
+    //                     item.children.forEach((it) => {
+    //                         children_ids.push(it.target_id);
+    //                         if (it.children && _.isArray(it.children)) {
+    //                             getChildrenTargetIDs(it.children, it.target_id, children_ids);
+    //                         }
+    //                     })
+    //                 }
+    //             }
+    //         })
+    //     }
+    //     return children_ids;
+    // }
+
+    // 接口数据
+    let apipostData = {};
+
+    try {
+        apipostData = {"data":{"id":1623179,"local_issue_id":"48c677c1ec2e81e178429393cae5ed80","local_target_id":"2eb4f1b4-37a4-40a1-b6ce-a081927cbeb9","project_id":2258734,"name":"GOWIOT","url":"0e3b3d92f8fc7696","salt":"bde7c222bbfaca22","password":"","env_id":"7c0927e9-b512-4070-86e8-1d5bbd80f7ea","create_time":1706806092,"target_id":-1,"target_type":"folder","expire_days":-1,"expire_time":-1,"attribute_list":[],"env_ids":["7c0927e9-b512-4070-86e8-1d5bbd80f7ea"],"portrait":"https:\/\/img.cdn.apipost.cn\/user\/default_profile_photo\/Vector-3.png","nick_name":"WWW","app_web_url":"https:\/\/v7-api.apipost.cn","project_name":"GOWIOT","publisher":"WWW","pub_name":"GOWIOT","project_logo":"","project":{"vars":{"request":{"cookie":[],"header":[],"query":[],"body":[]},"script":{"pre_script":"","test":"","auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""}}},"variable":[],"methods":["POST","GET","PUT","PATCH","DELETE","COPY","HEAD","OPTIONS","LINK","UNLINK","PURGE","LOCK","UNLOCK","PROPFIND","VIEW"],"mark":[{"key":"developing","name":"开发中","color":"#3A86FF","is_default":true},{"key":"complated","name":"已完成","color":"#2BA58F","is_default":true},{"key":"modifying","name":"需修改","color":"#EC4646","is_default":true}]},"code_list":[],"attribute_list":[]},"attribute_lists":[],"children":[{"local_target_id":"2eb4f1b4-37a4-40a1-b6ce-a081927cbeb9","local_parent_id":"0","name":"GOWIOT","method":"POST","mark":"developing","is_doc":0,"target_type":"folder","example_type":"0","project_id":2258734,"status":1,"sort":14,"create_dtime":1705678436,"update_dtime":1706528384,"local_server_id":"default","target_id":"2eb4f1b4-37a4-40a1-b6ce-a081927cbeb9","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"","create_time":"2024-01-19 23:33:56","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#3A86FF","attribute_lists":[],"script":{"pre_script":"let token = apt.globals.get(\"token\");\r\napt.globals.set(\"token\", token);","test":"","pre_script_switch":1,"test_switch":1},"request":{"description":"","header":[{"description":"token","field_type":"String","is_checked":1,"key":"X-Token","value":"{{x-token}}","not_null":1,"type":"Text","value_var":"","key_var":""}],"query":[],"body":[],"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""}}},"parent_id":"0","children":[{"local_target_id":"565b4a8e-4999-4538-b5ba-a6efd913f286","local_parent_id":"2eb4f1b4-37a4-40a1-b6ce-a081927cbeb9","name":"健康检测","method":"GET","mark":"complated","is_doc":0,"target_type":"api","example_type":"0","project_id":"917b3466-d647-43cf-91cd-519abb0ba257","status":1,"sort":1,"create_dtime":1705678554,"update_dtime":1705839951,"local_server_id":"","target_id":"565b4a8e-4999-4538-b5ba-a6efd913f286","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-19 23:35:54","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#2BA58F","attribute_lists":[],"enable_server_mock":-1,"mock_server_url":"","mock_url":"","request":{"url":"localhost:8000\/hello","description":"","body":{"mode":"none","parameter":[],"raw":"","raw_para":[],"raw_schema":{"type":"object"}},"event":{"pre_script":"","test":""},"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""},"digest":{"username":"","password":"","realm":"","nonce":"","algorithm":"","qop":"","nc":"","cnonce":"","opaque":""},"hawk":{"authId":"","authKey":"","algorithm":"","user":"","nonce":"","extraData":"","app":"","delegation":"","timestamp":"","includePayloadHash":-1},"awsv4":{"accessKey":"","secretKey":"","region":"","service":"","sessionToken":"","addAuthDataToQuery":-1},"ntlm":{"username":"","password":"","domain":"","workstation":"","disableRetryRequest":1},"edgegrid":{"accessToken":"","clientToken":"","clientSecret":"","nonce":"","timestamp":"","baseURi":"","headersToSign":""},"oauth1":{"consumerKey":"","consumerSecret":"","signatureMethod":"","addEmptyParamsToSign":-1,"includeBodyHash":-1,"addParamsToHeader":-1,"realm":"","version":"1.0","nonce":"","timestamp":"","verifier":"","callback":"","tokenSecret":"","token":""}},"header":{"parameter":[]},"query":{"parameter":[]},"cookie":{"parameter":[]},"resful":{"parameter":[]},"origin_url":"\/hello"},"response":{"success":{"raw":"","parameter":[],"expect":{"name":"成功","isDefault":1,"code":200,"contentType":"json","verifyType":"schema","schema":[],"mock":""}},"error":{"raw":"","parameter":[],"expect":{"name":"失败","isDefault":-1,"code":404,"contentType":"json","verifyType":"schema","schema":[],"mock":""}}},"parent_id":"2eb4f1b4-37a4-40a1-b6ce-a081927cbeb9"},{"local_target_id":"0d1dbc3f-6c6f-4632-9bf3-9cd32e5e02d1","local_parent_id":"2eb4f1b4-37a4-40a1-b6ce-a081927cbeb9","name":"casbin检测","method":"GET","mark":"complated","is_doc":0,"target_type":"api","example_type":"0","project_id":"917b3466-d647-43cf-91cd-519abb0ba257","status":1,"sort":5,"create_dtime":1705994372,"update_dtime":1705994372,"local_server_id":"","target_id":"0d1dbc3f-6c6f-4632-9bf3-9cd32e5e02d1","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-23 15:19:32","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#2BA58F","attribute_lists":[],"enable_server_mock":-1,"mock_server_url":"","mock_url":"","request":{"url":"localhost:8000\/hi","description":"","body":{"mode":"none","parameter":[],"raw":"","raw_para":[],"raw_schema":{"type":"object"}},"event":{"pre_script":"","test":""},"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""},"digest":{"username":"","password":"","realm":"","nonce":"","algorithm":"","qop":"","nc":"","cnonce":"","opaque":""},"hawk":{"authId":"","authKey":"","algorithm":"","user":"","nonce":"","extraData":"","app":"","delegation":"","timestamp":"","includePayloadHash":-1},"awsv4":{"accessKey":"","secretKey":"","region":"","service":"","sessionToken":"","addAuthDataToQuery":-1},"ntlm":{"username":"","password":"","domain":"","workstation":"","disableRetryRequest":1},"edgegrid":{"accessToken":"","clientToken":"","clientSecret":"","nonce":"","timestamp":"","baseURi":"","headersToSign":""},"oauth1":{"consumerKey":"","consumerSecret":"","signatureMethod":"","addEmptyParamsToSign":-1,"includeBodyHash":-1,"addParamsToHeader":-1,"realm":"","version":"1.0","nonce":"","timestamp":"","verifier":"","callback":"","tokenSecret":"","token":""}},"header":{"parameter":[]},"query":{"parameter":[]},"cookie":{"parameter":[]},"resful":{"parameter":[]},"origin_url":"\/hi"},"response":{"success":{"raw":"","parameter":[],"expect":{"name":"成功","isDefault":1,"code":200,"contentType":"json","verifyType":"schema","schema":[],"mock":""}},"error":{"raw":"","parameter":[],"expect":{"name":"失败","isDefault":-1,"code":404,"contentType":"json","verifyType":"schema","schema":[],"mock":""}}},"parent_id":"2eb4f1b4-37a4-40a1-b6ce-a081927cbeb9"},{"local_target_id":"32fdf21d-7900-4757-a75c-3664b664f038","local_parent_id":"2eb4f1b4-37a4-40a1-b6ce-a081927cbeb9","name":"用户","method":"POST","mark":"developing","is_doc":0,"target_type":"folder","example_type":"0","project_id":2258734,"status":1,"sort":6,"create_dtime":1706009039,"update_dtime":1706009039,"local_server_id":"","target_id":"32fdf21d-7900-4757-a75c-3664b664f038","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-23 19:23:59","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#3A86FF","attribute_lists":[],"script":{"pre_script":"","test":"","pre_script_switch":1,"test_switch":1},"request":{"description":"","header":[],"query":[],"body":[],"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""}}},"parent_id":"2eb4f1b4-37a4-40a1-b6ce-a081927cbeb9","children":[{"local_target_id":"7a0617b2-59cb-4cb8-b2cc-a1e49d0d15bb","local_parent_id":"32fdf21d-7900-4757-a75c-3664b664f038","name":"修改密码","method":"POST","mark":"complated","is_doc":0,"target_type":"api","example_type":"0","project_id":"917b3466-d647-43cf-91cd-519abb0ba257","status":1,"sort":0,"create_dtime":1705843829,"update_dtime":1705911675,"local_server_id":"","target_id":"7a0617b2-59cb-4cb8-b2cc-a1e49d0d15bb","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-21 21:30:29","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#2BA58F","attribute_lists":[],"enable_server_mock":-1,"mock_server_url":"","mock_url":"","request":{"url":"localhost:8000\/user\/password","description":"","body":{"mode":"json","parameter":[],"raw":"{\r\n    \"username\": \"test1\",\r\n    \"password\": \"test1\"\r\n}","raw_para":[],"raw_schema":{"type":"object"}},"event":{"pre_script":"","test":""},"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""},"digest":{"username":"","password":"","realm":"","nonce":"","algorithm":"","qop":"","nc":"","cnonce":"","opaque":""},"hawk":{"authId":"","authKey":"","algorithm":"","user":"","nonce":"","extraData":"","app":"","delegation":"","timestamp":"","includePayloadHash":-1},"awsv4":{"accessKey":"","secretKey":"","region":"","service":"","sessionToken":"","addAuthDataToQuery":-1},"ntlm":{"username":"","password":"","domain":"","workstation":"","disableRetryRequest":1},"edgegrid":{"accessToken":"","clientToken":"","clientSecret":"","nonce":"","timestamp":"","baseURi":"","headersToSign":""},"oauth1":{"consumerKey":"","consumerSecret":"","signatureMethod":"","addEmptyParamsToSign":-1,"includeBodyHash":-1,"addParamsToHeader":-1,"realm":"","version":"1.0","nonce":"","timestamp":"","verifier":"","callback":"","tokenSecret":"","token":""}},"header":{"parameter":[{"description":"token","field_type":"String","is_checked":-1,"key":"x-token","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6MSwiVXNlcm5hbWUiOiJzeXNhZG1pbiIsIkF1dGhvcml0eSI6MSwiQnVmZmVyVGltZSI6ODY0MDAsImV4cCI6MTcwNjUxNTA1NCwiaXNzIjoid2giLCJuYmYiOjE3MDU5MDkyNTR9.pUkpXoBzYXQZ2-3lpVCNu3N6r6Qf_LiaDf4UWtkDyTA","not_null":1,"type":"Text","value_var":"","key_var":""}]},"query":{"parameter":[]},"cookie":{"parameter":[]},"resful":{"parameter":[]},"origin_url":"\/user\/password"},"response":{"success":{"raw":"{\r\n\t\"code\": 0,\r\n\t\"data\": null,\r\n\t\"msg\": \"修改成功\"\r\n}","parameter":[{"description":"","field_type":"object","is_checked":1,"key":"","not_null":false,"type":"object","value":"-"},{"description":"","field_type":"integer","is_checked":1,"key":"code","not_null":1,"type":"integer","value":-68961910340964},{"description":"","field_type":"null","is_checked":1,"key":"data","not_null":1,"type":"null","value":"null"},{"description":"","field_type":"string","is_checked":1,"key":"msg","not_null":1,"type":"string","value":"府开今切该引其"}],"expect":{"name":"成功","isDefault":1,"code":200,"contentType":"json","verifyType":"schema","schema":{"type":"object","properties":{"code":{"type":"integer"},"data":{"type":"null"},"msg":{"type":"string"}},"required":["code","data","msg"],"APIPOST_ORDERS":["code","data","msg"]},"mock":""}},"error":{"raw":"","parameter":[],"expect":{"name":"失败","isDefault":-1,"code":404,"contentType":"json","verifyType":"schema","schema":[],"mock":""}},"0604aaf6-284e-4335-b570-938700662e89":{"expect":{"name":"已存在","isDefault":-1,"code":200,"contentType":"json","verifyType":"schema","schema":{"type":"object","properties":[],"required":[]},"mock":""},"raw":"{\r\n\t\"code\": 0,\r\n\t\"data\": null,\r\n\t\"msg\": \"用户名已存在\"\r\n}","parameter":[]}},"parent_id":"32fdf21d-7900-4757-a75c-3664b664f038"},{"local_target_id":"4543a39a-251c-4c28-a73a-f56af9e63374","local_parent_id":"32fdf21d-7900-4757-a75c-3664b664f038","name":"注册","method":"POST","mark":"complated","is_doc":0,"target_type":"api","example_type":"0","project_id":"917b3466-d647-43cf-91cd-519abb0ba257","status":1,"sort":1,"create_dtime":1705764524,"update_dtime":1705991698,"local_server_id":"","target_id":"4543a39a-251c-4c28-a73a-f56af9e63374","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-20 23:28:44","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#2BA58F","attribute_lists":[],"enable_server_mock":-1,"mock_server_url":"","mock_url":"","request":{"url":"localhost:8000\/user\/register","description":"","body":{"mode":"json","parameter":[],"raw":"{\r\n    \"username\": \"test3\",\r\n    \"password\": \"test3\"\r\n}","raw_para":[{"description":"","field_type":"String","is_checked":1,"key":"","value":"","not_null":1,"type":"Text","static":true}],"raw_schema":{"type":"object"}},"event":{"pre_script":"","test":""},"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""},"digest":{"username":"","password":"","realm":"","nonce":"","algorithm":"","qop":"","nc":"","cnonce":"","opaque":""},"hawk":{"authId":"","authKey":"","algorithm":"","user":"","nonce":"","extraData":"","app":"","delegation":"","timestamp":"","includePayloadHash":-1},"awsv4":{"accessKey":"","secretKey":"","region":"","service":"","sessionToken":"","addAuthDataToQuery":-1},"ntlm":{"username":"","password":"","domain":"","workstation":"","disableRetryRequest":1},"edgegrid":{"accessToken":"","clientToken":"","clientSecret":"","nonce":"","timestamp":"","baseURi":"","headersToSign":""},"oauth1":{"consumerKey":"","consumerSecret":"","signatureMethod":"","addEmptyParamsToSign":-1,"includeBodyHash":-1,"addParamsToHeader":-1,"realm":"","version":"1.0","nonce":"","timestamp":"","verifier":"","callback":"","tokenSecret":"","token":""}},"header":{"parameter":[{"description":"token","field_type":"String","is_checked":-1,"key":"x-token","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6MSwiVXNlcm5hbWUiOiJzeXNhZG1pbiIsIkF1dGhvcml0eSI6MSwiQnVmZmVyVGltZSI6ODY0MDAsImV4cCI6MTcwNjM3MzQyNCwiaXNzIjoid2giLCJuYmYiOjE3MDU3Njc2MjR9.2KRN61A2LAGMvrIsbgTDFCqBeWZ9FJaoTTYersOc5AI","not_null":1,"type":"Text","value_var":"","key_var":""}]},"query":{"parameter":[]},"cookie":{"parameter":[]},"resful":{"parameter":[]},"origin_url":"\/user\/register"},"response":{"success":{"raw":"{\r\n\t\"code\": 1,\r\n\t\"data\": {\r\n\t\t\"user\": {\r\n\t\t\t\"ID\": 0,\r\n\t\t\t\"CreateAt\": \"00:00:00\",\r\n\t\t\t\"UpdateAt\": \"00:00:00\",\r\n\t\t\t\"username\": \"test1\",\r\n\t\t\t\"password\": \"test\"\r\n\t\t}\r\n\t},\r\n\t\"msg\": \"注册成功\"\r\n}","parameter":[{"description":"","field_type":"object","is_checked":1,"key":"","not_null":false,"type":"object","value":"-"},{"description":"","field_type":"integer","is_checked":1,"key":"code","not_null":1,"type":"integer","value":-68961910340964},{"description":"","field_type":"null","is_checked":1,"key":"data","not_null":1,"type":"null","value":"null"},{"description":"","field_type":"string","is_checked":1,"key":"msg","not_null":1,"type":"string","value":"府开今切该引其"}],"expect":{"name":"成功","isDefault":1,"code":200,"contentType":"json","verifyType":"schema","schema":{"type":"object","properties":{"code":{"type":"integer"},"data":{"type":"object","properties":{"user":{"type":"object","properties":{"ID":{"type":"integer"},"CreateAt":{"type":"string"},"UpdateAt":{"type":"string"},"username":{"type":"string"},"password":{"type":"string"}},"required":["ID","CreateAt","UpdateAt","username","password"],"APIPOST_ORDERS":["ID","CreateAt","UpdateAt","username","password"]}},"required":["user"],"APIPOST_ORDERS":["user"]},"msg":{"type":"string"}},"required":["code","data","msg"],"APIPOST_ORDERS":["code","data","msg"]},"mock":""}},"error":{"raw":"","parameter":[],"expect":{"name":"失败","isDefault":-1,"code":404,"contentType":"json","verifyType":"schema","schema":[],"mock":""}},"0604aaf6-284e-4335-b570-938700662e89":{"expect":{"name":"已存在","isDefault":-1,"code":200,"contentType":"json","verifyType":"schema","schema":{"type":"object","properties":[],"required":[]},"mock":""},"raw":"{\r\n\t\"code\": 0,\r\n\t\"data\": null,\r\n\t\"msg\": \"用户名已存在\"\r\n}","parameter":[]}},"parent_id":"32fdf21d-7900-4757-a75c-3664b664f038"},{"local_target_id":"c31ff82b-709a-4da0-9b0b-11219e4247aa","local_parent_id":"32fdf21d-7900-4757-a75c-3664b664f038","name":"登陆","method":"POST","mark":"complated","is_doc":0,"target_type":"api","example_type":"0","project_id":"917b3466-d647-43cf-91cd-519abb0ba257","status":1,"sort":2,"create_dtime":1705679119,"update_dtime":1706803795,"local_server_id":"","target_id":"c31ff82b-709a-4da0-9b0b-11219e4247aa","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-19 23:45:19","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#2BA58F","attribute_lists":[],"enable_server_mock":-1,"mock_server_url":"","mock_url":"","request":{"url":"localhost:8000\/base\/login","description":"","body":{"mode":"json","parameter":[],"raw":"{\r\n    \"username\": \"sysadmin\",\r\n    \"password\": \"sysadmin\"\r\n}\r\n\/\/ {\r\n\/\/     \"username\": \"test\",\r\n\/\/     \"password\": \"12345\"\r\n\/\/ }","raw_para":[],"raw_schema":{"type":"object"}},"event":{"pre_script":"","test":""},"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""},"digest":{"username":"","password":"","realm":"","nonce":"","algorithm":"","qop":"","nc":"","cnonce":"","opaque":""},"hawk":{"authId":"","authKey":"","algorithm":"","user":"","nonce":"","extraData":"","app":"","delegation":"","timestamp":"","includePayloadHash":-1},"awsv4":{"accessKey":"","secretKey":"","region":"","service":"","sessionToken":"","addAuthDataToQuery":-1},"ntlm":{"username":"","password":"","domain":"","workstation":"","disableRetryRequest":1},"edgegrid":{"accessToken":"","clientToken":"","clientSecret":"","nonce":"","timestamp":"","baseURi":"","headersToSign":""},"oauth1":{"consumerKey":"","consumerSecret":"","signatureMethod":"","addEmptyParamsToSign":-1,"includeBodyHash":-1,"addParamsToHeader":-1,"realm":"","version":"1.0","nonce":"","timestamp":"","verifier":"","callback":"","tokenSecret":"","token":""}},"header":{"parameter":[]},"query":{"parameter":[]},"cookie":{"parameter":[]},"resful":{"parameter":[]},"origin_url":"\/base\/login"},"response":{"success":{"raw":"{\r\n\t\"code\": 1,\r\n\t\"data\": {\r\n\t\t\"Username\": \"sysadmin\",\r\n\t\t\"Token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6MSwiVXNlcm5hbWUiOiJzeXNhZG1pbiIsIkF1dGhvcml0eSI6MSwiQnVmZmVyVGltZSI6ODY0MDAsImV4cCI6MTcwNjQ0NDUzMiwiaXNzIjoid2giLCJuYmYiOjE3MDU4Mzg3MzJ9.lYFdL6uJsqrLzLnEawD-dH3MmW-eaw8vQ48w8QXnRwQ\",\r\n\t\t\"ExpiresAt\": 1706444532\r\n\t},\r\n\t\"msg\": \"登陆成功\"\r\n}","parameter":[{"description":"","field_type":"object","is_checked":1,"key":"","not_null":false,"type":"object","value":"-"},{"description":"","field_type":"integer","is_checked":1,"key":"code","not_null":1,"type":"integer","value":8616559568308095},{"description":"","field_type":"object","is_checked":1,"key":"data","not_null":1,"type":"object","value":"-"},{"description":"","field_type":"string","is_checked":1,"key":"data.Username","not_null":1,"type":"string","value":"历决国道市者物间系地性为与以持单所史往知统阶外"},{"description":"","field_type":"string","is_checked":1,"key":"data.Token","not_null":1,"type":"string","value":"次人一矿机红正极"},{"description":"","field_type":"integer","is_checked":1,"key":"data.ExpiresAt","not_null":1,"type":"integer","value":2183448206578551},{"description":"","field_type":"string","is_checked":1,"key":"msg","not_null":1,"type":"string","value":""}],"expect":{"name":"成功","isDefault":1,"code":200,"contentType":"json","verifyType":"schema","schema":{"type":"object","properties":{"code":{"type":"integer"},"data":{"type":"object","properties":{"Username":{"type":"string"},"Token":{"type":"string"},"ExpiresAt":{"type":"integer"}},"required":["Username","Token","ExpiresAt"],"APIPOST_ORDERS":["Username","Token","ExpiresAt"]},"msg":{"type":"string"}},"required":["code","data","msg"],"APIPOST_ORDERS":["code","data","msg"]},"mock":""}},"error":{"raw":"","parameter":[],"expect":{"name":"失败","isDefault":-1,"code":404,"contentType":"json","verifyType":"schema","schema":[],"mock":""}}},"parent_id":"32fdf21d-7900-4757-a75c-3664b664f038"},{"local_target_id":"da5ea53d-4a24-45d7-aa7a-9a9c8fb6adf7","local_parent_id":"32fdf21d-7900-4757-a75c-3664b664f038","name":"删除用户","method":"DELETE","mark":"developing","is_doc":0,"target_type":"api","example_type":"0","project_id":"917b3466-d647-43cf-91cd-519abb0ba257","status":1,"sort":3,"create_dtime":1705991746,"update_dtime":1705993294,"local_server_id":"","target_id":"da5ea53d-4a24-45d7-aa7a-9a9c8fb6adf7","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-23 14:35:46","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#3A86FF","attribute_lists":[],"enable_server_mock":-1,"mock_server_url":"","mock_url":"","request":{"url":"localhost:8000\/user\/delete","description":"","body":{"mode":"json","parameter":[{"description":"","field_type":"String","is_checked":1,"key":"id","value":"4","not_null":1,"type":"Text","value_var":"","key_var":""}],"raw":"{\r\n    \"id\": 4\r\n}","raw_para":[],"raw_schema":{"type":"object"}},"event":{"pre_script":"","test":""},"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""},"digest":{"username":"","password":"","realm":"","nonce":"","algorithm":"","qop":"","nc":"","cnonce":"","opaque":""},"hawk":{"authId":"","authKey":"","algorithm":"","user":"","nonce":"","extraData":"","app":"","delegation":"","timestamp":"","includePayloadHash":-1},"awsv4":{"accessKey":"","secretKey":"","region":"","service":"","sessionToken":"","addAuthDataToQuery":-1},"ntlm":{"username":"","password":"","domain":"","workstation":"","disableRetryRequest":1},"edgegrid":{"accessToken":"","clientToken":"","clientSecret":"","nonce":"","timestamp":"","baseURi":"","headersToSign":""},"oauth1":{"consumerKey":"","consumerSecret":"","signatureMethod":"","addEmptyParamsToSign":-1,"includeBodyHash":-1,"addParamsToHeader":-1,"realm":"","version":"1.0","nonce":"","timestamp":"","verifier":"","callback":"","tokenSecret":"","token":""}},"header":{"parameter":[]},"query":{"parameter":[]},"cookie":{"parameter":[]},"resful":{"parameter":[]},"origin_url":"\/user\/delete"},"response":{"success":{"raw":"{\r\n\t\"code\": 1,\r\n\t\"data\": null,\r\n\t\"msg\": \"删除成功\"\r\n}","parameter":[],"expect":{"name":"成功","isDefault":1,"code":200,"contentType":"json","verifyType":"schema","schema":{"type":"object","properties":{"code":{"type":"integer"},"data":{"type":"null"},"msg":{"type":"string"}},"required":["code","data","msg"],"APIPOST_ORDERS":["code","data","msg"]},"mock":""}},"error":{"raw":"","parameter":[],"expect":{"name":"失败","isDefault":-1,"code":404,"contentType":"json","verifyType":"schema","schema":[],"mock":""}}},"parent_id":"32fdf21d-7900-4757-a75c-3664b664f038"},{"local_target_id":"408af67f-e806-4567-b071-94388650da81","local_parent_id":"32fdf21d-7900-4757-a75c-3664b664f038","name":"获取用户列表","method":"GET","mark":"developing","is_doc":0,"target_type":"api","example_type":"0","project_id":"917b3466-d647-43cf-91cd-519abb0ba257","status":1,"sort":4,"create_dtime":1706188190,"update_dtime":1706528443,"local_server_id":"","target_id":"408af67f-e806-4567-b071-94388650da81","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-25 21:09:50","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#3A86FF","attribute_lists":[],"enable_server_mock":-1,"mock_server_url":"","mock_url":"","request":{"url":"localhost:8000\/user\/list","description":"","body":{"mode":"none","parameter":[],"raw":"","raw_para":[],"raw_schema":{"type":"object"}},"event":{"pre_script":"","test":""},"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""},"digest":{"username":"","password":"","realm":"","nonce":"","algorithm":"","qop":"","nc":"","cnonce":"","opaque":""},"hawk":{"authId":"","authKey":"","algorithm":"","user":"","nonce":"","extraData":"","app":"","delegation":"","timestamp":"","includePayloadHash":-1},"awsv4":{"accessKey":"","secretKey":"","region":"","service":"","sessionToken":"","addAuthDataToQuery":-1},"ntlm":{"username":"","password":"","domain":"","workstation":"","disableRetryRequest":1},"edgegrid":{"accessToken":"","clientToken":"","clientSecret":"","nonce":"","timestamp":"","baseURi":"","headersToSign":""},"oauth1":{"consumerKey":"","consumerSecret":"","signatureMethod":"","addEmptyParamsToSign":-1,"includeBodyHash":-1,"addParamsToHeader":-1,"realm":"","version":"1.0","nonce":"","timestamp":"","verifier":"","callback":"","tokenSecret":"","token":""}},"header":{"parameter":[{"description":"","field_type":"String","is_checked":1,"key":"X-Token","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6MSwiVXNlcm5hbWUiOiJzeXNhZG1pbiIsIkF1dGhvcml0eSI6IjAiLCJCdWZmZXJUaW1lIjo4NjQwMCwiZXhwIjoxNzA3MTMzMDI4LCJpc3MiOiJ3aCIsIm5iZiI6MTcwNjUyNzIyOH0.rraXXLhoI1RuRN0ATsXUB5gMxRgofG4sS-GhhsTdP6s","not_null":1,"type":"Text","value_var":"","key_var":""}]},"query":{"parameter":[]},"cookie":{"parameter":[]},"resful":{"parameter":[]},"origin_url":"\/user\/list"},"response":{"success":{"raw":"{\r\n\t\"code\": 1,\r\n\t\"data\": {\r\n\t\t\"total\": 3,\r\n\t\t\"userList\": [\r\n\t\t\t{\r\n\t\t\t\t\"ID\": 1,\r\n\t\t\t\t\"username\": \"sysadmin\",\r\n\t\t\t\t\"authority\": \"0\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ID\": 2,\r\n\t\t\t\t\"username\": \"test\",\r\n\t\t\t\t\"authority\": \"1\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"ID\": 3,\r\n\t\t\t\t\"username\": \"test1\",\r\n\t\t\t\t\"authority\": \"1\"\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"msg\": \"查询成功\"\r\n}","parameter":[],"expect":{"name":"成功","isDefault":1,"code":200,"contentType":"json","verifyType":"schema","schema":[],"mock":""}},"error":{"raw":"","parameter":[],"expect":{"name":"失败","isDefault":-1,"code":404,"contentType":"json","verifyType":"schema","schema":[],"mock":""}}},"parent_id":"32fdf21d-7900-4757-a75c-3664b664f038"}]},{"local_target_id":"18506993-f440-42f0-930e-5852cc9f6407","local_parent_id":"2eb4f1b4-37a4-40a1-b6ce-a081927cbeb9","name":"设备","method":"POST","mark":"developing","is_doc":0,"target_type":"folder","example_type":"0","project_id":2258734,"status":1,"sort":7,"create_dtime":1706009113,"update_dtime":1706009113,"local_server_id":"","target_id":"18506993-f440-42f0-930e-5852cc9f6407","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-23 19:25:13","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#3A86FF","attribute_lists":[],"script":{"pre_script":"","test":"","pre_script_switch":1,"test_switch":1},"request":{"description":"","header":[],"query":[],"body":[],"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""}}},"parent_id":"2eb4f1b4-37a4-40a1-b6ce-a081927cbeb9","children":[{"local_target_id":"bb31ffb0-b465-41f0-8af6-38aa996687d1","local_parent_id":"18506993-f440-42f0-930e-5852cc9f6407","name":"添加设备","method":"POST","mark":"developing","is_doc":0,"target_type":"api","example_type":"0","project_id":"917b3466-d647-43cf-91cd-519abb0ba257","status":1,"sort":1,"create_dtime":1706012247,"update_dtime":1706803626,"local_server_id":"","target_id":"bb31ffb0-b465-41f0-8af6-38aa996687d1","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-23 20:17:27","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#3A86FF","attribute_lists":[],"enable_server_mock":-1,"mock_server_url":"","mock_url":"","request":{"url":"localhost:8000\/device\/add","description":"","body":{"mode":"json","parameter":[],"raw":"{\r\n    \"name\": \"神经质传感器\",\r\n    \"type\": \"传感器\",\r\n    \"action_list\": \"[{\\\"value\\\":1,\\\"action\\\":\\\"流汗\\\"},{\\\"value\\\":2,\\\"action\\\":\\\"重启\\\"}]\"\r\n}","raw_para":[{"description":"操作前对应的数字将会作为mqtt向设备发送的指令；如关机操作，将发送{\"action\":1}","field_type":"String","is_checked":1,"key":"action_list","value":"\"[{1:'开机'},{2:'关机'}]\"","not_null":1,"type":"Text"}],"raw_schema":{"type":"object"}},"event":{"pre_script":"","test":""},"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""},"digest":{"username":"","password":"","realm":"","nonce":"","algorithm":"","qop":"","nc":"","cnonce":"","opaque":""},"hawk":{"authId":"","authKey":"","algorithm":"","user":"","nonce":"","extraData":"","app":"","delegation":"","timestamp":"","includePayloadHash":-1},"awsv4":{"accessKey":"","secretKey":"","region":"","service":"","sessionToken":"","addAuthDataToQuery":-1},"ntlm":{"username":"","password":"","domain":"","workstation":"","disableRetryRequest":1},"edgegrid":{"accessToken":"","clientToken":"","clientSecret":"","nonce":"","timestamp":"","baseURi":"","headersToSign":""},"oauth1":{"consumerKey":"","consumerSecret":"","signatureMethod":"","addEmptyParamsToSign":-1,"includeBodyHash":-1,"addParamsToHeader":-1,"realm":"","version":"1.0","nonce":"","timestamp":"","verifier":"","callback":"","tokenSecret":"","token":""}},"header":{"parameter":[]},"query":{"parameter":[]},"cookie":{"parameter":[]},"resful":{"parameter":[]},"origin_url":"\/device\/add"},"response":{"success":{"raw":"{\r\n\t\"code\": 1,\r\n\t\"data\": {\r\n\t\t\"device\": {\r\n\t\t\t\"ID\": 0,\r\n\t\t\t\"CreateAt\": \"0001-01-01T00:00:00Z\",\r\n\t\t\t\"UpdateAt\": \"0001-01-01T00:00:00Z\",\r\n\t\t\t\"name\": \"温度传感器\",\r\n\t\t\t\"clientid\": \"wiot-1-3711\",\r\n\t\t\t\"Owner\": 1,\r\n\t\t\t\"owner\": {\r\n\t\t\t\t\"ID\": 0,\r\n\t\t\t\t\"CreateAt\": \"0001-01-01T00:00:00Z\",\r\n\t\t\t\t\"UpdateAt\": \"0001-01-01T00:00:00Z\"\r\n\t\t\t},\r\n\t\t\t\"type\": \"传感器\",\r\n\t\t\t\"topic\": \"wiot-1-3711\",\r\n\t\t\t\"action_list\": \"[{1:'开机'},{2:'关机'}]\",\r\n\t\t\t\"data_table\": \"device_13711\"\r\n\t\t}\r\n\t},\r\n\t\"msg\": \"添加成功\"\r\n}","parameter":[],"expect":{"name":"成功","isDefault":1,"code":200,"contentType":"json","verifyType":"schema","schema":[],"mock":""}},"error":{"raw":"","parameter":[],"expect":{"name":"失败","isDefault":-1,"code":404,"contentType":"json","verifyType":"schema","schema":[],"mock":""}}},"parent_id":"18506993-f440-42f0-930e-5852cc9f6407"},{"local_target_id":"fda6a54c-ab61-407f-b408-097e828af4ef","local_parent_id":"18506993-f440-42f0-930e-5852cc9f6407","name":"取消订阅","method":"DELETE","mark":"developing","is_doc":0,"target_type":"api","example_type":"0","project_id":"917b3466-d647-43cf-91cd-519abb0ba257","status":1,"sort":2,"create_dtime":1706105428,"update_dtime":1706181782,"local_server_id":"","target_id":"fda6a54c-ab61-407f-b408-097e828af4ef","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-24 22:10:28","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#3A86FF","attribute_lists":[],"enable_server_mock":-1,"mock_server_url":"","mock_url":"","request":{"url":"localhost:8000\/device\/unsub","description":"","body":{"mode":"json","parameter":[],"raw":"{\r\n    \"id\": 2\r\n}","raw_para":[],"raw_schema":{"type":"object"}},"event":{"pre_script":"","test":""},"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""},"digest":{"username":"","password":"","realm":"","nonce":"","algorithm":"","qop":"","nc":"","cnonce":"","opaque":""},"hawk":{"authId":"","authKey":"","algorithm":"","user":"","nonce":"","extraData":"","app":"","delegation":"","timestamp":"","includePayloadHash":-1},"awsv4":{"accessKey":"","secretKey":"","region":"","service":"","sessionToken":"","addAuthDataToQuery":-1},"ntlm":{"username":"","password":"","domain":"","workstation":"","disableRetryRequest":1},"edgegrid":{"accessToken":"","clientToken":"","clientSecret":"","nonce":"","timestamp":"","baseURi":"","headersToSign":""},"oauth1":{"consumerKey":"","consumerSecret":"","signatureMethod":"","addEmptyParamsToSign":-1,"includeBodyHash":-1,"addParamsToHeader":-1,"realm":"","version":"1.0","nonce":"","timestamp":"","verifier":"","callback":"","tokenSecret":"","token":""}},"header":{"parameter":[]},"query":{"parameter":[]},"cookie":{"parameter":[]},"resful":{"parameter":[]},"origin_url":"\/device\/unsub"},"response":{"success":{"raw":"","parameter":[],"expect":{"name":"成功","isDefault":1,"code":200,"contentType":"json","verifyType":"schema","schema":[],"mock":""}},"error":{"raw":"","parameter":[],"expect":{"name":"失败","isDefault":-1,"code":404,"contentType":"json","verifyType":"schema","schema":[],"mock":""}}},"parent_id":"18506993-f440-42f0-930e-5852cc9f6407"},{"local_target_id":"30fec0fd-c400-420a-8638-34c93e001ef6","local_parent_id":"18506993-f440-42f0-930e-5852cc9f6407","name":"设备订阅","method":"POST","mark":"developing","is_doc":0,"target_type":"api","example_type":"0","project_id":"917b3466-d647-43cf-91cd-519abb0ba257","status":1,"sort":3,"create_dtime":1706105453,"update_dtime":1706181784,"local_server_id":"","target_id":"30fec0fd-c400-420a-8638-34c93e001ef6","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-24 22:10:53","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#3A86FF","attribute_lists":[],"enable_server_mock":-1,"mock_server_url":"","mock_url":"","request":{"url":"localhost:8000\/device\/sub","description":"","body":{"mode":"json","parameter":[],"raw":"{\r\n    \"id\": 2\r\n}","raw_para":[],"raw_schema":{"type":"object"}},"event":{"pre_script":"","test":""},"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""},"digest":{"username":"","password":"","realm":"","nonce":"","algorithm":"","qop":"","nc":"","cnonce":"","opaque":""},"hawk":{"authId":"","authKey":"","algorithm":"","user":"","nonce":"","extraData":"","app":"","delegation":"","timestamp":"","includePayloadHash":-1},"awsv4":{"accessKey":"","secretKey":"","region":"","service":"","sessionToken":"","addAuthDataToQuery":-1},"ntlm":{"username":"","password":"","domain":"","workstation":"","disableRetryRequest":1},"edgegrid":{"accessToken":"","clientToken":"","clientSecret":"","nonce":"","timestamp":"","baseURi":"","headersToSign":""},"oauth1":{"consumerKey":"","consumerSecret":"","signatureMethod":"","addEmptyParamsToSign":-1,"includeBodyHash":-1,"addParamsToHeader":-1,"realm":"","version":"1.0","nonce":"","timestamp":"","verifier":"","callback":"","tokenSecret":"","token":""}},"header":{"parameter":[]},"query":{"parameter":[]},"cookie":{"parameter":[]},"resful":{"parameter":[]},"origin_url":"\/device\/sub"},"response":{"success":{"raw":"","parameter":[],"expect":{"name":"成功","isDefault":1,"code":200,"contentType":"json","verifyType":"schema","schema":[],"mock":""}},"error":{"raw":"","parameter":[],"expect":{"name":"失败","isDefault":-1,"code":404,"contentType":"json","verifyType":"schema","schema":[],"mock":""}}},"parent_id":"18506993-f440-42f0-930e-5852cc9f6407"},{"local_target_id":"158a2ea8-04ba-44a6-8060-bc08df76112d","local_parent_id":"18506993-f440-42f0-930e-5852cc9f6407","name":"获取所有设备","method":"GET","mark":"developing","is_doc":0,"target_type":"api","example_type":"0","project_id":"917b3466-d647-43cf-91cd-519abb0ba257","status":1,"sort":4,"create_dtime":1706186064,"update_dtime":1706186098,"local_server_id":"","target_id":"158a2ea8-04ba-44a6-8060-bc08df76112d","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-25 20:34:24","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#3A86FF","attribute_lists":[],"enable_server_mock":-1,"mock_server_url":"","mock_url":"","request":{"url":"localhost:8000\/device\/list","description":"","body":{"mode":"none","parameter":[],"raw":"","raw_para":[],"raw_schema":{"type":"object"}},"event":{"pre_script":"","test":""},"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""},"digest":{"username":"","password":"","realm":"","nonce":"","algorithm":"","qop":"","nc":"","cnonce":"","opaque":""},"hawk":{"authId":"","authKey":"","algorithm":"","user":"","nonce":"","extraData":"","app":"","delegation":"","timestamp":"","includePayloadHash":-1},"awsv4":{"accessKey":"","secretKey":"","region":"","service":"","sessionToken":"","addAuthDataToQuery":-1},"ntlm":{"username":"","password":"","domain":"","workstation":"","disableRetryRequest":1},"edgegrid":{"accessToken":"","clientToken":"","clientSecret":"","nonce":"","timestamp":"","baseURi":"","headersToSign":""},"oauth1":{"consumerKey":"","consumerSecret":"","signatureMethod":"","addEmptyParamsToSign":-1,"includeBodyHash":-1,"addParamsToHeader":-1,"realm":"","version":"1.0","nonce":"","timestamp":"","verifier":"","callback":"","tokenSecret":"","token":""}},"header":{"parameter":[]},"query":{"parameter":[]},"cookie":{"parameter":[]},"resful":{"parameter":[]},"origin_url":"\/device\/list"},"response":{"success":{"raw":"{\r\n\t\"code\": 1,\r\n\t\"data\": [\r\n\t\t{\r\n\t\t\t\"ID\": 1,\r\n\t\t\t\"CreateAt\": \"22:26:19\",\r\n\t\t\t\"UpdateAt\": \"00:00:00\",\r\n\t\t\t\"name\": \"温度传感器\",\r\n\t\t\t\"clientid\": \"wiot-1-6528\",\r\n\t\t\t\"Owner\": 1,\r\n\t\t\t\"owner\": {\r\n\t\t\t\t\"ID\": 0,\r\n\t\t\t\t\"CreateAt\": \"00:00:00\",\r\n\t\t\t\t\"UpdateAt\": \"00:00:00\"\r\n\t\t\t},\r\n\t\t\t\"type\": \"传感器\",\r\n\t\t\t\"topic\": \"wiot-1-6528\",\r\n\t\t\t\"action_list\": \"[{1:'开机'},{2:'关机'}]\",\r\n\t\t\t\"data_table\": \"device_16528\"\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"ID\": 2,\r\n\t\t\t\"CreateAt\": \"22:45:58\",\r\n\t\t\t\"UpdateAt\": \"00:00:00\",\r\n\t\t\t\"name\": \"神经质传感器\",\r\n\t\t\t\"clientid\": \"wiot-1-3489\",\r\n\t\t\t\"Owner\": 3,\r\n\t\t\t\"owner\": {\r\n\t\t\t\t\"ID\": 0,\r\n\t\t\t\t\"CreateAt\": \"00:00:00\",\r\n\t\t\t\t\"UpdateAt\": \"00:00:00\"\r\n\t\t\t},\r\n\t\t\t\"type\": \"传感器\",\r\n\t\t\t\"topic\": \"wiot-1-3489\",\r\n\t\t\t\"action_list\": \"[{1:'开机'},{2:'关机'}]\",\r\n\t\t\t\"data_table\": \"device_13489\"\r\n\t\t}\r\n\t],\r\n\t\"msg\": \"操作成功\"\r\n}","parameter":[],"expect":{"name":"成功","isDefault":1,"code":200,"contentType":"json","verifyType":"schema","schema":[],"mock":""}},"error":{"raw":"","parameter":[],"expect":{"name":"失败","isDefault":-1,"code":404,"contentType":"json","verifyType":"schema","schema":[],"mock":""}}},"parent_id":"18506993-f440-42f0-930e-5852cc9f6407"},{"local_target_id":"04590d9a-b3b5-47dd-8d81-c032e86cc5d5","local_parent_id":"18506993-f440-42f0-930e-5852cc9f6407","name":"获取我的设备","method":"GET","mark":"developing","is_doc":0,"target_type":"api","example_type":"0","project_id":"917b3466-d647-43cf-91cd-519abb0ba257","status":1,"sort":5,"create_dtime":1706186119,"update_dtime":1706186119,"local_server_id":"","target_id":"04590d9a-b3b5-47dd-8d81-c032e86cc5d5","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-01-25 20:35:19","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#3A86FF","attribute_lists":[],"enable_server_mock":-1,"mock_server_url":"","mock_url":"","request":{"url":"localhost:8000\/device\/mine","description":"","body":{"mode":"none","parameter":[],"raw":"","raw_para":[],"raw_schema":{"type":"object"}},"event":{"pre_script":"","test":""},"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""},"digest":{"username":"","password":"","realm":"","nonce":"","algorithm":"","qop":"","nc":"","cnonce":"","opaque":""},"hawk":{"authId":"","authKey":"","algorithm":"","user":"","nonce":"","extraData":"","app":"","delegation":"","timestamp":"","includePayloadHash":-1},"awsv4":{"accessKey":"","secretKey":"","region":"","service":"","sessionToken":"","addAuthDataToQuery":-1},"ntlm":{"username":"","password":"","domain":"","workstation":"","disableRetryRequest":1},"edgegrid":{"accessToken":"","clientToken":"","clientSecret":"","nonce":"","timestamp":"","baseURi":"","headersToSign":""},"oauth1":{"consumerKey":"","consumerSecret":"","signatureMethod":"","addEmptyParamsToSign":-1,"includeBodyHash":-1,"addParamsToHeader":-1,"realm":"","version":"1.0","nonce":"","timestamp":"","verifier":"","callback":"","tokenSecret":"","token":""}},"header":{"parameter":[]},"query":{"parameter":[]},"cookie":{"parameter":[]},"resful":{"parameter":[]},"origin_url":"\/device\/mine"},"response":{"success":{"raw":"","parameter":[],"expect":{"name":"成功","isDefault":1,"code":200,"contentType":"json","verifyType":"schema","schema":[],"mock":""}},"error":{"raw":"","parameter":[],"expect":{"name":"失败","isDefault":-1,"code":404,"contentType":"json","verifyType":"schema","schema":[],"mock":""}}},"parent_id":"18506993-f440-42f0-930e-5852cc9f6407"},{"local_target_id":"a472a880-4726-4486-8895-22bd0c7257af","local_parent_id":"18506993-f440-42f0-930e-5852cc9f6407","name":"发送指令","method":"POST","mark":"developing","is_doc":0,"target_type":"api","example_type":"0","project_id":"917b3466-d647-43cf-91cd-519abb0ba257","status":1,"sort":6,"create_dtime":1706803714,"update_dtime":1706805294,"local_server_id":"","target_id":"a472a880-4726-4486-8895-22bd0c7257af","modifier_id":"UW5LS696FDD4","created_uuid":"UW5LS696FDD4","extend_server_id":"default","create_time":"2024-02-02 00:08:34","create_users":{"create_user":"WWW","update_user":"WWW"},"color":"#3A86FF","attribute_lists":[],"enable_server_mock":-1,"mock_server_url":"","mock_url":"","request":{"url":"localhost:8000\/device\/call","description":"","body":{"mode":"json","parameter":[],"raw":"{\r\n\t\"id\": 4,\r\n\t\"client_id\": \"wiot-1-6108\",\r\n\t\"topic\": \"wiot-1-6108\",\r\n\t\"action\": \"1\"\r\n}","raw_para":[],"raw_schema":{"type":"object"}},"event":{"pre_script":"","test":""},"auth":{"type":"noauth","kv":{"key":"","value":""},"bearer":{"key":""},"basic":{"username":"","password":""},"digest":{"username":"","password":"","realm":"","nonce":"","algorithm":"","qop":"","nc":"","cnonce":"","opaque":""},"hawk":{"authId":"","authKey":"","algorithm":"","user":"","nonce":"","extraData":"","app":"","delegation":"","timestamp":"","includePayloadHash":-1},"awsv4":{"accessKey":"","secretKey":"","region":"","service":"","sessionToken":"","addAuthDataToQuery":-1},"ntlm":{"username":"","password":"","domain":"","workstation":"","disableRetryRequest":1},"edgegrid":{"accessToken":"","clientToken":"","clientSecret":"","nonce":"","timestamp":"","baseURi":"","headersToSign":""},"oauth1":{"consumerKey":"","consumerSecret":"","signatureMethod":"","addEmptyParamsToSign":-1,"includeBodyHash":-1,"addParamsToHeader":-1,"realm":"","version":"1.0","nonce":"","timestamp":"","verifier":"","callback":"","tokenSecret":"","token":""}},"header":{"parameter":[{"description":"","field_type":"String","is_checked":1,"key":"X-Token","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6MSwiVXNlcm5hbWUiOiJzeXNhZG1pbiIsIkF1dGhvcml0eSI6IjAiLCJCdWZmZXJUaW1lIjo4NjQwMCwiZXhwIjoxNzA3NDA4NTkzLCJpc3MiOiJ3aCIsIm5iZiI6MTcwNjgwMjc5M30._3Zj9VFutRU6lZL3Gh-9V-wsIM-9rQsi3HRYsykRrPQ","not_null":1,"type":"Text","value_var":"","key_var":""}]},"query":{"parameter":[]},"cookie":{"parameter":[]},"resful":{"parameter":[]},"origin_url":"\/device\/call"},"response":{"success":{"raw":"{\r\n\t\"code\": 1,\r\n\t\"data\": null,\r\n\t\"msg\": \"指令已下发\"\r\n}","parameter":[],"expect":{"name":"成功","isDefault":1,"code":200,"contentType":"json","verifyType":"schema","schema":{"type":"object","properties":{"code":{"type":"integer"},"data":{"type":"null"},"msg":{"type":"string"}},"required":["code","data","msg"],"APIPOST_ORDERS":["code","data","msg"]},"mock":""}},"error":{"raw":"","parameter":[],"expect":{"name":"失败","isDefault":-1,"code":404,"contentType":"json","verifyType":"schema","schema":[],"mock":""}}},"parent_id":"18506993-f440-42f0-930e-5852cc9f6407"}]}]}]}};
+        apipostData = apipostData.data;
+        consoleLog('apipostData ---- ',apipostData);
+    } catch (e) { }
+
+    if (!_.isEmpty(apipostData)) {
+        if (!_.isArray(apipostData.children)) {
+            apipostData.children = [];
+        }
+
+        // 导航菜单
+        apipostData.children = sortData(apipostData.children, 'ascending');
+
+        // 数据词典（对象，键为target_id）
+        const dataDB = {};
+        const ruleType = (data) => {
+            const d = Object.prototype.toString.call(data);
+            return d.substr(8, d.length - 9);
+        };
+
+        const renderListtoObject = (List) => {
+            if (ruleType(List) === 'Array') {
+                List &&
+                List.forEach((item) => {
+                    if (item.children) {
+                        renderListtoObject(item.children);
+                        dataDB[item.target_id] = item;
+                    } else {
+                        dataDB[item.target_id] = item;
+                    }
+                });
+            }
+        };
+
+        // 搜索
+        $(document).on('input', 'input[name="search-input"]', function () {
+            let keyword = _.toLower($(this).val());
+            let searchResult = [];
+
+            if (keyword == '') {
+                $('.apipost-left-nav-template').find('li').removeClass('is-search-hidden search-toggle');
+            } else {
+
+                if (_.isObject(dataDB) && !_.isEmpty(dataDB)) {
+                    _.forEach(dataDB, function (item) {
+                        consoleLog(_.toLower(item.name), keyword, _.toLower(item.name).indexOf(keyword))
+                        if (_.toLower(item.url).indexOf(keyword) > -1 || _.toLower(item.name).indexOf(keyword) > -1 || _.toLower(item.method).indexOf(keyword) > -1) {
+                            searchResult.push(item.target_id);
+                        }
+                    });
+
+                    if (searchResult.length == 0) {
+                        $('.apipost-left-nav-template').find('li').addClass('is-search-hidden');
+                    } else {
+                        searchResult.forEach(target_id => {
+                            searchResult = _.concat(searchResult, getParentTargetIDs(Object.values(dataDB), target_id));
+                        })
+                    }
+
+                    // 隐藏其他
+                    _.difference(Object.keys(dataDB), searchResult).forEach(hidden_target_id => {
+                        $(`.apipost-left-nav-template li[data-target_id="${hidden_target_id}"]`).addClass('is-search-hidden');
+                        $(`.apipost-left-nav-template li[data-target_id="${hidden_target_id}"][data-type="folder"]`).addClass('search-toggle');
+                    })
+
+                    // 展示结果
+                    searchResult.forEach(show_target_id => {
+                        $(`.apipost-left-nav-template li[data-target_id="${show_target_id}"]`).removeClass('is-search-hidden is-hidden search-toggle');
+                        $(`.apipost-left-nav-template li[data-target_id="${show_target_id}"][data-type="folder"]`).removeClass('search-toggle');
+                    })
+                }
+            }
+        })
+
+        renderListtoObject(apipostData.children);
+
+        // 获取当前的target_id
+        let _target_id = '001';
+        const _urlParas = GetUrlQuery();
+
+        if (_.isObject(_urlParas) && _.isString(_urlParas.target_id)) {
+            _target_id = _urlParas.target_id;
+        }
+
+        // 修改地址栏
+        function changeURLStatic(name, value) {
+            const url = changeURLParam(location.href, name, value); // 修改 URL 参数
+            history.replaceState(null, null, url); // 替换地址栏
+        }
+
+        function changeURLParam(url, name, value) {
+            const reg = eval(`/([?|&]${name}=)[^&]*/gi`);
+            value = value.toString().replace(/(^\s*)|(\s*$)/g, ''); // 移除首尾空格
+            let url2;
+            if (!value) {
+                // remove
+                url2 = url.replace(reg, '');
+            } else if (url.match(reg)) {
+                // edit
+                url2 = url.replace(reg, `$1${value}`);
+            } else {
+                // add
+                url2 = `${url + (url.indexOf('?') > -1 ? '&' : '?') + name}=${value}`;
+            }
+            return url2;
+        }
+
+        // 格式化内容
+        function formatJson(json) {
+            // consoleLog(json, apipostData);
+
+            // name
+            if (json.target_type == 'global') {
+                _.set(json, 'name', '全局公共参数');
+            }
+
+            // mark
+            if (_.has(apipostData, 'project.vars.mark') && _.isArray(apipostData.project.vars.mark)) {
+                const _markedObj = {};
+                apipostData.project.vars.mark.forEach((item) => {
+                    _markedObj[item.key] = item;
+                });
+
+                if (_.isObject(_markedObj[json.mark])) {
+                    _.set(json, 'formatMark', _markedObj[json.mark]);
+                }
+            }
+
+            // time
+            if (_.isNumber(json.create_dtime)) {
+                if (String(json.create_dtime).length == 10) {
+                    _.set(
+                        json,
+                        'format_create_dtime',
+                        dayjs.unix(json.create_dtime).format('YYYY-MM-DD HH:mm:ss')
+                    );
+                }
+
+                if (String(json.create_dtime).length == 13) {
+                    _.set(json, 'format_create_dtime', dayjs(json.create_dtime).format('YYYY-MM-DD HH:mm:ss'));
+                }
+            } else {
+                if (_.isString(json.create_dtime)) {
+                    _.set(json, 'format_create_dtime', json.create_dtime);
+                } else {
+                    _.set(json, 'format_create_dtime', dayjs().format('YYYY-MM-DD HH:mm:ss'));
+                }
+            }
+
+            if (_.isNumber(json.update_dtime)) {
+                if (String(json.update_dtime).length == 10) {
+                    _.set(
+                        json,
+                        'format_update_dtime',
+                        dayjs.unix(json.update_dtime).format('YYYY-MM-DD HH:mm:ss')
+                    );
+                }
+
+                if (String(json.update_dtime).length == 13) {
+                    _.set(json, 'format_update_dtime', dayjs(json.update_dtime).format('YYYY-MM-DD HH:mm:ss'));
+                }
+            } else {
+                if (_.isString(json.update_dtime)) {
+                    _.set(json, 'format_update_dtime', json.update_dtime);
+                } else {
+                    _.set(json, 'format_update_dtime', dayjs().format('YYYY-MM-DD HH:mm:ss'));
+                }
+            }
+
+            // formatMode
+            if (_.has(json, 'request.body.mode')) {
+                switch (json.request.body.mode) {
+                    case 'none':
+                        break;
+                    case 'form-data':
+                        _.set(json, 'request.body.formatMode', 'multipart/form-data');
+                        break;
+                    case 'urlencoded':
+                        _.set(json, 'request.body.formatMode', 'application/x-www-form-urlencoded');
+                        break;
+                    case 'json':
+                        _.set(json, 'request.body.formatMode', 'application/json');
+                        break;
+                    case 'xml':
+                        _.set(json, 'request.body.formatMode', 'application/xml');
+                        break;
+                    case 'javascript':
+                        _.set(json, 'request.body.formatMode', 'application/javascript');
+                        break;
+                    case 'plain':
+                        _.set(json, 'request.body.formatMode', 'text/plain');
+                        break;
+                    case 'html':
+                        _.set(json, 'request.body.formatMode', 'text/html');
+                        break;
+                }
+            }
+
+            if(_.has(json, 'request.auth.type')) {
+                switch (json.request.auth.type) {
+                    case 'noauth':
+                        _.set(json, 'request.authType', '无需认证');
+                        break;
+                    case 'awsv4':
+                        _.set(json, 'request.authType', 'AWS Signature');
+                        break;
+                    case 'basic':
+                        _.set(json, 'request.authType', 'Basic auth');
+                        break;
+                    case 'bearer':
+                        _.set(json, 'request.authType', 'Bearer auth');
+                        break;
+                    case 'digest':
+                        _.set(json, 'request.authType', 'Digest auth');
+                        break;
+                    case 'edgegrid':
+                        _.set(json, 'request.authType', 'Akamai EdgeGrid');
+                        break;
+                    case 'hawk':
+                        _.set(json, 'request.authType', 'Hawk authentication');
+                        break;
+                    case 'kv':
+                        _.set(json, 'request.authType', '私密键值对');
+                        break;
+                    case 'ntlm':
+                        _.set(json, 'request.authType', 'NTLM Authentication');
+                        break;
+                    case 'oauth1':
+                        _.set(json, 'request.authType', 'OAuth 1.0');
+                        break;
+                }
+            }
+
+            json.url = json.request.url;
+            return json;
+        }
+
+        // 加载当前数据
+        function loadData(_target_id,dataDB) {
+
+            // 获取当前的数据信息
+            let _targetData = {};
+
+            // 右侧浮动导航
+            let floatNavs = [];
+
+            if(_target_id == '001'){
+                if (_.isObject(dataDB[_target_id])) {
+                    _targetData = _.cloneDeep(dataDB[_target_id]);
+                } else if (
+                    _.has(apipostData, 'project.vars.request') &&
+                    _.isObject(apipostData.project.vars.request)
+                ) {
+                    _targetData = {
+                        target_type: 'global',
+                        request: apipostData.project.vars.request,
+                        script: apipostData.project.vars.script,
+                    };
+                } else {
+                    _targetData = {
+                        target_type: 'none',
+                        request: {},
+                    };
+                }
+
+                _targetData = formatJson(_targetData);
+
+                $('.apipost-doc-body-nav-list').find('li').removeClass('active');
+                $('.apipost-doc-body-nav-list')
+                    .find(`li[data-target_id="${_target_id}"]`)
+                    .eq(0)
+                    .addClass('active')
+                    .toggleClass('toggle search-toggle');
+
+                // const children_ids = getChildrenTargetIDs(Object.values(dataDB), _target_id);
+                //
+                // if (_.isArray(children_ids)) {
+                //     if (
+                //         $('.apipost-doc-body-nav-list')
+                //             .find(`li[data-target_id="${_target_id}"]`)
+                //             .eq(0)
+                //             .hasClass('toggle')
+                //     ) {
+                //         children_ids.forEach((target_id) => {
+                //             if ($(`li[data-target_id="${target_id}"]`).attr('data-type') == 'folder') {
+                //                 $(`li[data-target_id="${target_id}"]`).addClass('is-hidden toggle');
+                //             } else {
+                //                 $(`li[data-target_id="${target_id}"]`).addClass('is-hidden');
+                //             }
+                //         });
+                //     } else {
+                //         children_ids.forEach((target_id) => {
+                //             if ($(`li[data-target_id="${target_id}"]`).attr('data-type') == 'folder') {
+                //                 $(`li[data-target_id="${target_id}"]`).removeClass('is-hidden toggle');
+                //             } else {
+                //                 $(`li[data-target_id="${target_id}"]`).removeClass('is-hidden');
+                //             }
+                //         });
+                //     }
+                // }
+
+                _targetData.copyData = JSON.parse(JSON.stringify(_targetData));
+                if(_targetData.copyData.target_type == 'example'){
+                    _targetData.copyData.target_type = _targetData.copyData.example_type;
+                }
+
+                // 加载左侧内容
+                const _docContentHtml = template('apipost-doc-wrap-tpl', {
+                    data: _targetData,
+                    target_id: _target_id,
+                });
+
+                $('.apipost-doc-wrap').html(_docContentHtml);
+
+                // 右侧浮动导航
+                floatNavs = [];
+                $('.apipost-doc-wrap').find('h3 ,h4, h5, h6, h7').each((i, item) => {
+                    let text = $(item).attr('data-text');
+                    let id = $(item).attr('id');
+                    if (text) {
+                        floatNavs.push({
+                            text, id,
+                            name: $(item).prop("tagName"),
+                            indent: $(item).prop("tagName").replace(/[^0-9]/ig, "") - 2,
+                        })
+                    }
+                })
+
+                const _floatNavs = template('apipost-float-nav-template-tpl', {
+                    list: floatNavs
+                });
+
+                $('.apipost-float-nav-template').html(_floatNavs);
+
+                // 请求body raw 参数
+                try {
+                    if (_targetData.target_type == 'grpc' || _targetData.example_type == 'grpc') {
+                        $('.request-body-raw-editor-json').each((i, item) => {
+                            let val = $(item).prev('input').val();
+
+                            if(val){
+                                new JsonEditor(
+                                    `#${$(item).attr('id')}`,
+                                    JSON5.parse(val),
+                                    {},
+                                    []
+                                ).load(JSON5.parse(val), []);
+                            }
+                        })
+                    }
+
+                    if (_targetData.target_type == 'api' || _targetData.example_type == 'api') {
+                        let obj = [];
+                        if (_.has(_targetData, 'request.body.raw_para')) {
+                            obj = _targetData.request.body.raw_para.map((itemRaw) => {
+                                const arr = itemRaw.key.split('.');
+                                itemRaw.newKey = arr[arr.length - 1];
+                                return itemRaw;
+                            });
+                        }
+
+                        if($('#request-body-raw-editor-input').length > 0){
+                            new JsonEditor('#request-body-raw-editor-json',
+                                JSON5.parse($('#request-body-raw-editor-input').val()),
+                                {},
+                                obj
+                            ).load(JSON5.parse($('#request-body-raw-editor-input').val()), obj);
+                        }
+                    }
+                } catch (e) { }
+
+                // 响应示例 raw 参数
+                try {
+                    _.forEach(_targetData.response, function (item, key) {
+                        const obj = item.parameter.map((itemRaw) => {
+                            const arr = itemRaw.key.split('.');
+                            itemRaw.newKey = arr[arr.length - 1];
+                            return itemRaw;
+                        });
+
+                        if($(`#response-raw-${key}-json-input`).length > 0){
+                            new JsonEditor(`#response-raw-${key}-json`,
+                                JSON5.parse($(`#response-raw-${key}-json-input`).val()),
+                                {},
+                                obj
+                            ).load(JSON5.parse($(`#response-raw-${key}-json-input`).val()), obj);
+                        }
+                    });
+                } catch (e) { }
+
+                // 更新 url
+                changeURLStatic('target_id', _target_id);
+
+                // 优化 apipost-doc-paras 展示
+                $('.apipost-doc-paras').each((i, item) => {
+                    if ($(item).children().length == 0) {
+                        let _id = $(item).attr('for-id');
+                        let _title = $(`#${_id}`).attr('data-text');
+                        let _tipDiv = `<div class="apipost-no-data">暂无${_title}数据</div>`;
+                        $(item).append(_tipDiv)
+                    }
+                })
+            }else {
+
+                let newdata = Object.values(dataDB)
+                // let LevelArr = []
+                //
+                // function levelTree(arr1, newarr) {
+                //     arr1.forEach(item => {
+                //         if (item.children && item.children.length > 0) {
+                //             newarr.push(item)
+                //             levelTree(item.children, newarr)
+                //         } else {
+                //             newarr.push(item)
+                //         }
+                //     })
+                // }
+                //
+                // levelTree(newdata, LevelArr)
+
+                newdata.forEach(item => {
+                    if (item.local_target_id == _target_id) {
+
+                        _targetData = formatJson(item);
+
+                        $('.apipost-doc-body-nav-list').find('li').removeClass('active');
+                        $('.apipost-doc-body-nav-list')
+                            .find(`li[data-target_id="${_target_id}"]`)
+                            .eq(0)
+                            .addClass('active')
+                            .toggleClass('toggle search-toggle');
+
+                        const children_ids = getChildrenTargetIDs(Object.values(dataDB), _target_id);
+
+                        if (_.isArray(children_ids)) {
+                            if (
+                                $('.apipost-doc-body-nav-list')
+                                    .find(`li[data-target_id="${_target_id}"]`)
+                                    .eq(0)
+                                    .hasClass('toggle')
+                            ) {
+                                children_ids.forEach((target_id) => {
+                                    if ($(`li[data-target_id="${target_id}"]`).attr('data-type') == 'folder') {
+                                        $(`li[data-target_id="${target_id}"]`).addClass('is-hidden toggle');
+                                    } else {
+                                        $(`li[data-target_id="${target_id}"]`).addClass('is-hidden');
+                                    }
+                                });
+                            } else {
+                                children_ids.forEach((target_id) => {
+                                    if ($(`li[data-target_id="${target_id}"]`).attr('data-type') == 'folder') {
+                                        $(`li[data-target_id="${target_id}"]`).removeClass('is-hidden toggle');
+                                    } else {
+                                        $(`li[data-target_id="${target_id}"]`).removeClass('is-hidden');
+                                    }
+                                });
+                            }
+                        }
+
+                        // 加载左侧内容
+                        const _docContentHtml = template('apipost-doc-wrap-tpl', {
+                            data: _targetData,
+                            target_id: _target_id,
+                        });
+
+                        $('.apipost-doc-wrap').html(_docContentHtml);
+
+                        // 右侧浮动导航
+                        floatNavs = [];
+                        $('.apipost-doc-wrap').find('h3 ,h4, h5, h6, h7').each((i, item) => {
+                            let text = $(item).attr('data-text');
+                            let id = $(item).attr('id');
+                            if (text) {
+                                floatNavs.push({
+                                    text, id,
+                                    name: $(item).prop("tagName"),
+                                    indent: $(item).prop("tagName").replace(/[^0-9]/ig, "") - 2,
+                                })
+                            }
+                        })
+
+                        const _floatNavs = template('apipost-float-nav-template-tpl', {
+                            list: floatNavs
+                        });
+
+                        $('.apipost-float-nav-template').html(_floatNavs);
+
+                        // 请求body raw 参数
+                        try {
+                            if (_targetData.target_type == 'grpc' || _targetData.example_type == 'grpc') {
+                                $('.request-body-raw-editor-json').each((i, item) => {
+                                    let val = $(item).prev('input').val();
+
+                                    if(val){
+                                        new JsonEditor(
+                                            `#${$(item).attr('id')}`,
+                                            JSON5.parse(val),
+                                            {},
+                                            []
+                                        ).load(JSON5.parse(val), []);
+                                    }
+                                })
+                            }
+
+                            if (_targetData.target_type == 'api' || _targetData.example_type == 'api') {
+                                let obj = [];
+                                if (_.has(_targetData, 'request.body.raw_para')) {
+                                    obj = _targetData.request.body.raw_para.map((itemRaw) => {
+                                        const arr = itemRaw.key.split('.');
+                                        itemRaw.newKey = arr[arr.length - 1];
+                                        return itemRaw;
+                                    });
+                                }
+
+                                if($('#request-body-raw-editor-input').length > 0){
+                                    new JsonEditor('#request-body-raw-editor-json',
+                                        JSON5.parse($('#request-body-raw-editor-input').val()),
+                                        {},
+                                        obj
+                                    ).load(JSON5.parse($('#request-body-raw-editor-input').val()), obj);
+                                }
+                            }
+                        } catch (e) { }
+
+                        // 响应示例 raw 参数
+                        try {
+                            _.forEach(_targetData.response, function (item, key) {
+                                const obj = item.parameter.map((itemRaw) => {
+                                    const arr = itemRaw.key.split('.');
+                                    itemRaw.newKey = arr[arr.length - 1];
+                                    return itemRaw;
+                                });
+
+                                if($(`#response-raw-${key}-json-input`).length > 0){
+                                    new JsonEditor(`#response-raw-${key}-json`,
+                                        JSON5.parse($(`#response-raw-${key}-json-input`).val()),
+                                        {},
+                                        obj
+                                    ).load(JSON5.parse($(`#response-raw-${key}-json-input`).val()), obj);
+                                }
+                            });
+                        } catch (e) { }
+                        // 更新 url
+                        changeURLStatic('target_id', _target_id);
+                    }
+                    // 优化 apipost-doc-paras 展示
+                    $('.apipost-doc-paras').each((i, item) => {
+                        if ($(item).children().length == 0) {
+                            let _id = $(item).attr('for-id');
+                            let _title = $(`#${_id}`).attr('data-text');
+                            let _tipDiv = `<div class="apipost-no-data">暂无${_title}数据</div>`;
+                            $(item).append(_tipDiv)
+                        }
+                    })
+                })
+            }
+
+            // 折叠导航(移动端)
+            $('.apipost-doc-body-nav,.apipost-doc-body-content').removeClass('open');
+
+            $(document).on('scroll', function (e) {
+                let currentNav= '';
+                let scrollTop = $(document).scrollTop();
+
+                floatNavs.forEach(item => {
+                    if ($(`#${item.id}`).offset()) {
+                        if ($(`#${item.id}`).offset().top > scrollTop && currentNav == '') {
+                            currentNav = item.id
+                            // console.log(currentNav)
+                            $('.apipost-float-nav-template').find(`li[data-id="${currentNav}"]`).addClass('active').siblings().removeClass('active');
+                        }
+                    }
+                })
+                // console.log('请求参数:', $('#请求参数').offset().top, scrollTop)
+            }).on('click', '.apipost-float-nav-template li', function(){
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+
+        }
+
+        // 初始化左侧导航列表
+        const _leftNavHtml = template('apipost-left-nav-template-tpl', {
+            list: apipostData.children,
+            target_id: _target_id,
+        });
+
+        $('.apipost-left-nav-template').html(_leftNavHtml);
+
+        // 初始化项目公共信息
+        $('title').text(`${apipostData.project_name} - Powered by Apipost V7`);
+        $('.apipost-doc-body-nav-title').text(`${apipostData.project_name}`);
+
+        // project-logo
+        if (_.has(apipostData, 'project_logo') && apipostData.project_logo != '') {
+            $('.project-logo').attr('src', apipostData.project_logo);
+        }
+
+        $('.project-logo').on('error', function () {
+            $('.project-logo').attr('src', 'https://img.cdn.apipost.cn/docs/images7/logo.svg');
+        });
+        // consoleLog(apipostData)
+
+        // 复制按钮
+        const clipboard = new ClipboardJS('.copy-clipboard');
+        clipboard.on('success', function (e) {
+            $('.copy-clipboard-success').remove();
+            $(e.trigger).append('<i class="copy-clipboard-success">复制成功</i>');
+            e.clearSelection();
+            $('.copy-clipboard-success').fadeOut(1000);
+            setTimeout(function () {
+                $('.copy-clipboard-success').remove();
+            }, 1500);
+        });
+
+        clipboard.on('error', function (e) { });
+
+        // 优化左侧菜单展示，默认收起
+        // 获取当前的父ID
+        let _target_parent_ids = getParentTargetIDs(Object.values(dataDB), _target_id);
+
+        $('.apipost-left-nav-template').children('li').each((i, item) => {
+            if ($(item).attr('data-type') == 'folder') {
+                if (_target_parent_ids.indexOf($(item).attr('data-target_id')) == -1) {
+                    $(item).addClass('toggle');
+                } else {
+                    $(item).removeClass('toggle');
+                }
+            }
+
+            //if($(item).attr('data-type') != 'example') {
+                if ($(item).attr('data-parent_id') != '0' && _target_parent_ids.indexOf($(item).attr('data-target_id')) == -1 && $(item).attr('data-target_id') != _target_id) {
+                    $(item).addClass('is-hidden');
+                } else {
+                    $(item).removeClass('is-hidden');
+                }
+            //}
+        })
+
+        // 同级展示
+        if (dataDB[_target_id]) {
+            // $('.apipost-left-nav-template').children(`li[data-parent_id="${dataDB[_target_id].parent_id}"]`).removeClass('is-hidden');
+            _target_parent_ids.forEach(_parent_id => {
+                $('.apipost-left-nav-template').children(`li[data-parent_id="${_parent_id}"]`).removeClass('is-hidden');
+            })
+        }
+
+        // alert(dataDB)
+        // 加载单接口信息
+        loadData(_target_id, dataDB);
+
+        // 绑定事件
+        $(document).on('click', '.mobile-nav-toggle-link-btn', function () { // 移动端导航
+            $('.apipost-doc-body-nav,.apipost-doc-body-content').addClass('open');
+        }).on('click', '.load-data-btn', function () { // 加载数据
+            let target_id = $(this).attr('data-target_id');
+            // let parent_id = $(this).attr('data-parent_id');
+            // let target_type = $(this).attr('data-type');
+            // let indent = $(this).attr('data-indent');
+
+            // 加载单条数据
+            loadData(target_id, dataDB);
+        }).on('click', '.export-download-btn', function () { // 导出文档
+            $(this).next('ul').toggleClass('is-hidden');
+        })
+    } else {
+        // 空数据
+        // consoleLog('null')
+    }
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?a046ce178828e393614822a297b8d296";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+
+</html>
