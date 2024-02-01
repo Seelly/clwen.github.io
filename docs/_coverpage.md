@@ -1,4 +1,4 @@
-<img src="https://picx1.zhimg.com/80/v2-c344d6388e0de407c8c61b88c066a25e_720w.webp?source=1940ef5c" style="
+<img src="http://8.219.233.253/avatar.png" style="
     border-style: none;
     width: 128px;
     height: auto;
@@ -11,7 +11,7 @@
 
 # Clwen
 
-- https://clwen.top/
+- https://seelly.github.io/
   
 
 [![stars](https://img.shields.io/github/stars/Seelly/geektime-books?style=social)](https://github.com/seelly/seelly.github.io) [![forks](https://img.shields.io/github/forks/seelly/geektime-books?style=social)](https://github.com/seelly/seelly.github.io) 
