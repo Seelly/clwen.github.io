@@ -1,1 +1,2 @@
-<iframe src="/md/gowiot/gowiot.html"></iframe>
+<iframe src="/md/gowiot/gowiot.html"
+style="height:28rem"></iframe>
