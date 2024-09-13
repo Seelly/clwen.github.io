@@ -239,11 +239,5 @@
       - [结课测试｜快来检验下你的学习成果吧！](/md/tonybai/结课测试｜快来检验下你的学习成果吧！.md)
    
    
-   - 数据库
-      - [MySQL学习记录](/md/MySQL学习记录.md)
-      - [Index](/md/Index.md)
-   - GOWIOT文档
-      - [使用](/md/gowiot/use.md)
-      - [路由](/md/gowiot/router.md)
-      - [API文档](/md/gowiot/apis.md)
+
 
